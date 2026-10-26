@@ -5,8 +5,8 @@ import ContentRow from './components/ContentRow';
 import VideoPlayerModal from './components/VideoPlayerModal';
 import MyListDrawer from './components/MyListDrawer';
 import WatchHistoryDrawer from './components/WatchHistoryDrawer';
-import GoogleAuthModal from './components/GoogleAuthModal';
 import BottomNav from './components/BottomNav';
+import { loadGoogleScript, triggerGoogleOAuthPopup } from './utils/googleAuth';
 import { CONTENTS, SHELVES, AGE_TABS } from './data/contents';
 import { Play, Sparkles, Heart, RotateCcw, ShieldCheck, Clock } from 'lucide-react';
 
@@ -24,7 +24,12 @@ export default function App() {
     }
   });
 
-  const [isGoogleModalOpen, setIsGoogleModalOpen] = useState(false);
+  const [isAuthLoading, setIsAuthLoading] = useState(false);
+
+  // Preload Google Identity Services SDK on initial page load
+  useEffect(() => {
+    loadGoogleScript().catch((err) => console.warn('Preloading Google SDK:', err));
+  }, []);
 
   const handleLoginSuccess = (userData) => {
     setUser(userData);
@@ -45,6 +50,30 @@ export default function App() {
     } catch (e) {
       console.error(e);
     }
+  };
+
+  // Direct 1-Click Google OAuth 2.0 Popup Login Flow
+  const handleDirectGoogleLogin = () => {
+    setIsAuthLoading(true);
+    triggerGoogleOAuthPopup({
+      onStart: () => setIsAuthLoading(true),
+      onSuccess: (userData) => {
+        setIsAuthLoading(false);
+        handleLoginSuccess(userData);
+      },
+      onError: (err) => {
+        setIsAuthLoading(false);
+        console.error('Google login error:', err);
+        if (err.message?.includes('closed') || err.message?.includes('dismissed') || err.message?.includes('cancelled')) {
+          return;
+        }
+        if (err.message?.includes('origin') || err.message?.includes('mismatch')) {
+          alert(`Google Cloud origin mismatch: Please open http://localhost:5173 or add ${window.location.origin} to Authorized JavaScript origins in Google Cloud Console.`);
+        } else {
+          alert(`Google Sign-In failed: ${err.message || 'Please try again.'}`);
+        }
+      }
+    });
   };
 
   // Watch History & Progress State (YouTube Style)
@@ -484,7 +513,8 @@ export default function App() {
         onOpenMyList={() => setIsMyListOpen(true)}
         onOpenHistory={() => setIsHistoryOpen(true)}
         user={user}
-        onOpenGoogleLogin={() => setIsGoogleModalOpen(true)}
+        onGoogleLogin={handleDirectGoogleLogin}
+        isAuthLoading={isAuthLoading}
         onLogout={handleLogout}
       />
 
@@ -685,13 +715,6 @@ export default function App() {
         onResumeVideo={(item, startSec) => handlePlayVideo(item, startSec)}
         onRemoveHistoryItem={removeHistoryItem}
         onClearHistory={clearHistory}
-      />
-
-      {/* Google Authentication Modal */}
-      <GoogleAuthModal
-        isOpen={isGoogleModalOpen}
-        onClose={() => setIsGoogleModalOpen(false)}
-        onLoginSuccess={handleLoginSuccess}
       />
 
     </div>

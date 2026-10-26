@@ -131,15 +131,19 @@ export function renderGoogleButton(containerElement, options = {}) {
  * Trigger authentic Google OAuth 2.0 popup using OAuth2 Token Client
  * Returns user profile via Google UserInfo API
  */
-export function triggerGoogleOAuthPopup({ onSuccess, onError, onStart }) {
-  if (!window.google?.accounts?.oauth2) {
-    if (onError) onError(new Error('Google OAuth2 SDK not loaded yet. Please wait a moment.'));
-    return;
-  }
-
+export async function triggerGoogleOAuthPopup({ onSuccess, onError, onStart }) {
   if (onStart) onStart();
 
   try {
+    if (!window.google?.accounts?.oauth2) {
+      await loadGoogleScript();
+    }
+
+    if (!window.google?.accounts?.oauth2) {
+      if (onError) onError(new Error('Google Identity Services SDK could not be loaded.'));
+      return;
+    }
+
     const tokenClient = window.google.accounts.oauth2.initTokenClient({
       client_id: GOOGLE_CLIENT_ID,
       scope: 'email profile openid',
