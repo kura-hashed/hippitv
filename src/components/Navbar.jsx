@@ -244,8 +244,7 @@ export default function Navbar({
                     />
                   </svg>
                 )}
-                <span className="hidden sm:inline font-bold">Sign in with Google</span>
-                <span className="sm:hidden font-bold">Sign In</span>
+                <span>Sign in</span>
               </button>
             )}
 
