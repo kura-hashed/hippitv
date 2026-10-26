@@ -1,5 +1,6 @@
 export const AGE_TABS = [
   { id: 'all', label: 'All Ages', badge: 'All' },
+  { id: 'real', label: '👩‍🏫 Real People 🇺🇸', badge: 'Real Human' },
   { id: '0-1', label: '0-1 Year', badge: 'Infant' },
   { id: '2', label: '2 Years', badge: 'Toddler' },
   { id: '3', label: '3 Years', badge: 'Early Preschool' },
@@ -8,6 +9,1007 @@ export const AGE_TABS = [
 ];
 
 export const CONTENTS = [
+  {
+    "id": "ms-rachel-talking-toddler",
+    "title": "Ms. Rachel: First Sentences & Speech Practice",
+    "creator": "Ms. Rachel (Songs for Littles)",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "30 min",
+    "matchScore": "100%",
+    "youtubeId": "-1DYsiKC7b4",
+    "thumbnail": "https://img.youtube.com/vi/-1DYsiKC7b4/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/-1DYsiKC7b4/maxresdefault.jpg",
+    "tagline": "Combining words into 2-3 word sentences: \u201cMore milk\u201d, \u201cHelp please\u201d, \u201cBig car\u201d.",
+    "description": "Helps toddlers progress from single words to multi-word phrases. Uses clear American English enunciation and patient 3-second pauses.",
+    "whyHealthy": "Targeted at expressive language expansion and speech delay prevention.",
+    "keyVocabulary": [
+      "More milk please",
+      "Help me open",
+      "I want ball",
+      "Bye bye truck"
+    ],
+    "parentTip": "When your toddler says \u201cmilk\u201d, expand it to \u201cmore milk please!\u201d just like Ms. Rachel models.",
+    "link": "https://www.youtube.com/watch?v=-1DYsiKC7b4",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Speech Delay",
+      "First Sentences"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "ms-rachel-feelings-emotions",
+    "title": "Ms. Rachel: Big Feelings & Emotional Regulation",
+    "creator": "Ms. Rachel",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "18 min",
+    "matchScore": "99%",
+    "youtubeId": "ozsgl_sLnHQ",
+    "thumbnail": "https://img.youtube.com/vi/ozsgl_sLnHQ/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/ozsgl_sLnHQ/maxresdefault.jpg",
+    "tagline": "\u201cIt\u2019s okay to cry, it\u2019s okay to feel mad. Take a deep breath with me.\u201d",
+    "description": "Validates toddler emotional overwhelm without shame. Teaches deep breathing, hugs, and words for feelings.",
+    "whyHealthy": "Develops emotional literacy and self-soothing strategies.",
+    "keyVocabulary": [
+      "Happy",
+      "Sad",
+      "Mad / Angry",
+      "Take a breath",
+      "Hug please"
+    ],
+    "parentTip": "Say: \u201cI see you feel frustrated. Let\u2019s take a deep breath together like Ms. Rachel.\u201d",
+    "link": "https://www.youtube.com/watch?v=ozsgl_sLnHQ",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Emotions",
+      "Feelings"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "caities-classroom-circle-time",
+    "title": "Caitie\u2019s Classroom: Welcome Circle & Hello Song",
+    "creator": "Caitie\u2019s Classroom (Super Simple)",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "15 min",
+    "matchScore": "99%",
+    "youtubeId": "tVlcKp3bWH8",
+    "thumbnail": "https://img.youtube.com/vi/tVlcKp3bWH8/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/tVlcKp3bWH8/maxresdefault.jpg",
+    "tagline": "Warm American educator welcoming children with acoustic songs and tactile play.",
+    "description": "Caitie hosts an unhurried preschool circle time with smiling direct address, real craft props, and peaceful sing-alongs.",
+    "whyHealthy": "Gentle classroom rhythm, calm acoustic instruments, zero rapid edits.",
+    "keyVocabulary": [
+      "Hello friend",
+      "Good morning",
+      "How are you?",
+      "Sing together",
+      "Smile"
+    ],
+    "parentTip": "Wave to Caitie on screen and practice saying \u201cHello Caitie!\u201d",
+    "link": "https://www.youtube.com/watch?v=tVlcKp3bWH8",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Circle Time",
+      "Gentle Host"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "caities-classroom-animals",
+    "title": "Learn Animal Sounds! - Caitie's Classroom",
+    "creator": "Super Simple Play with Caitie!",
+    "platform": "YouTube",
+    "targetAges": [
+      "2"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "99%",
+    "youtubeId": "Lehj2yvf8QQ",
+    "thumbnail": "https://img.youtube.com/vi/Lehj2yvf8QQ/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/Lehj2yvf8QQ/maxresdefault.jpg",
+    "tagline": "Real human educator with clear American English pronunciation.",
+    "description": "Learn Animal Sounds! - Caitie's Classroom with real human presentation for natural speech imitation.",
+    "whyHealthy": "Real human facial framing triggers speech mirror neurons and language mimicry.",
+    "keyVocabulary": [
+      "Listen",
+      "Look",
+      "Say it with me",
+      "Great job!"
+    ],
+    "parentTip": "Watch the educator\u2019s mouth movements together and repeat the sounds.",
+    "link": "https://www.youtube.com/watch?v=Lehj2yvf8QQ",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Speech Modeling"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "caities-classroom-colors",
+    "title": "Caitie\u2019s Classroom: Sorting Colors with Real Objects",
+    "creator": "Caitie\u2019s Classroom",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "10 min",
+    "matchScore": "98%",
+    "youtubeId": "pCeysxspwoU",
+    "thumbnail": "https://img.youtube.com/vi/pCeysxspwoU/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/pCeysxspwoU/maxresdefault.jpg",
+    "tagline": "Sorting real colored pom-poms, blocks, and wooden toys into colorful baskets.",
+    "description": "Caitie uses hands-on sorting techniques that toddlers can easily replicate at home with bowls and toys.",
+    "whyHealthy": "Cognitive categorization skills paired with descriptive color language.",
+    "keyVocabulary": [
+      "Red basket",
+      "Blue block",
+      "Green pom-pom",
+      "Sort together"
+    ],
+    "parentTip": "Get two colored bowls at home and sort colored socks or plastic cups together.",
+    "link": "https://www.youtube.com/watch?v=pCeysxspwoU",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Color Sorting",
+      "Hands-on"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "caities-classroom-farm-visit",
+    "title": "Caitie\u2019s Field Trip: Real Farm & Baby Animals",
+    "creator": "Caitie\u2019s Classroom",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "98%",
+    "youtubeId": "e-eCSsDn9NE",
+    "thumbnail": "https://img.youtube.com/vi/e-eCSsDn9NE/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/e-eCSsDn9NE/maxresdefault.jpg",
+    "tagline": "Caitie visits a real working farm to meet friendly cows, goats, and horses.",
+    "description": "Real-world field trip showing actual animals, real grass, and tractor sounds with clear descriptive narration.",
+    "whyHealthy": "Real footage of the physical world provides authentic sensory context.",
+    "keyVocabulary": [
+      "Farm",
+      "Baby goat",
+      "Gentle cow",
+      "Hay",
+      "Tractor"
+    ],
+    "parentTip": "Point out the real animal textures and ask: \u201cWhat does the goat eat? Crunchy hay!\u201d",
+    "link": "https://www.youtube.com/watch?v=e-eCSsDn9NE",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Real Farm",
+      "Field Trip"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "caities-classroom-aquarium",
+    "title": "Caitie\u2019s Field Trip: Real Aquarium & Sea Life",
+    "creator": "Caitie\u2019s Classroom",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3",
+      "4"
+    ],
+    "ageDisplay": "2-3 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "14 min",
+    "matchScore": "98%",
+    "youtubeId": "ptngrokhewc",
+    "thumbnail": "https://img.youtube.com/vi/ptngrokhewc/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/ptngrokhewc/maxresdefault.jpg",
+    "tagline": "Watching swimming sea turtles, colorful fish, and gentle rays.",
+    "description": "Peaceful underwater footage at a real public aquarium with Caitie\u2019s gentle explanations of marine life.",
+    "whyHealthy": "Hypnotic blue water and graceful marine motion lower stress and encourage awe.",
+    "keyVocabulary": [
+      "Swim swim",
+      "Sea turtle",
+      "Fish",
+      "Shell",
+      "Gentle water"
+    ],
+    "parentTip": "Make swimming motions with your arms while watching the sea turtles glide.",
+    "link": "https://www.youtube.com/watch?v=ptngrokhewc",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Aquarium",
+      "Nature"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "caities-classroom-dino",
+    "title": "ROAR! Dinosaurs!",
+    "creator": "Super Simple Play with Caitie!",
+    "platform": "YouTube",
+    "targetAges": [
+      "2"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "99%",
+    "youtubeId": "_WgnYP7RSfg",
+    "thumbnail": "https://img.youtube.com/vi/_WgnYP7RSfg/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/_WgnYP7RSfg/maxresdefault.jpg",
+    "tagline": "Real human educator with clear American English pronunciation.",
+    "description": "ROAR! Dinosaurs! with real human presentation for natural speech imitation.",
+    "whyHealthy": "Real human facial framing triggers speech mirror neurons and language mimicry.",
+    "keyVocabulary": [
+      "Listen",
+      "Look",
+      "Say it with me",
+      "Great job!"
+    ],
+    "parentTip": "Watch the educator\u2019s mouth movements together and repeat the sounds.",
+    "link": "https://www.youtube.com/watch?v=_WgnYP7RSfg",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Speech Modeling"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "caities-classroom-seasons",
+    "title": "The Seasons Song",
+    "creator": "Super Simple Songs - Kids Songs",
+    "platform": "YouTube",
+    "targetAges": [
+      "2"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "99%",
+    "youtubeId": "C_Sc5ZjdfFI",
+    "thumbnail": "https://img.youtube.com/vi/C_Sc5ZjdfFI/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/C_Sc5ZjdfFI/maxresdefault.jpg",
+    "tagline": "Real human educator with clear American English pronunciation.",
+    "description": "The Seasons Song with real human presentation for natural speech imitation.",
+    "whyHealthy": "Real human facial framing triggers speech mirror neurons and language mimicry.",
+    "keyVocabulary": [
+      "Listen",
+      "Look",
+      "Say it with me",
+      "Great job!"
+    ],
+    "parentTip": "Watch the educator\u2019s mouth movements together and repeat the sounds.",
+    "link": "https://www.youtube.com/watch?v=C_Sc5ZjdfFI",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Speech Modeling"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "miss-monica-circle-time-1",
+    "title": "Circle Time with Miss Monica: First Words & Days",
+    "creator": "Monica J Sutton (M.Ed Early Childhood)",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "18 min",
+    "matchScore": "99%",
+    "youtubeId": "INY3ETimTjg",
+    "thumbnail": "https://img.youtube.com/vi/INY3ETimTjg/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/INY3ETimTjg/maxresdefault.jpg",
+    "tagline": "Master\u2019s-degreed early educator. Warm American circle time beloved by parents.",
+    "description": "Miss Monica\u2019s calming presence has made her a top Reddit recommendation. She teaches calendar, weather, vowels, and feelings.",
+    "whyHealthy": "Developed by a certified child behavior specialist; structured predictable routine.",
+    "keyVocabulary": [
+      "Hello friends",
+      "What is the weather?",
+      "Today is happy",
+      "Let\u2019s learn together"
+    ],
+    "parentTip": "Look out your window together when Miss Monica asks: \u201cWhat\u2019s the weather today?\u201d",
+    "link": "https://www.youtube.com/watch?v=INY3ETimTjg",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "M.Ed Specialist",
+      "Circle Time",
+      "Reddit Favorite"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "miss-monica-letters-abc",
+    "title": "Miss Monica: Letter Sounds & Phonics Fun",
+    "creator": "Monica J Sutton",
+    "platform": "YouTube",
+    "targetAges": [
+      "3",
+      "4"
+    ],
+    "ageDisplay": "3 YRS",
+    "category": "video",
+    "stimulation": "Gentle",
+    "duration": "15 min",
+    "matchScore": "98%",
+    "youtubeId": "-BdH6ceLpBM",
+    "thumbnail": "https://img.youtube.com/vi/-BdH6ceLpBM/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/-BdH6ceLpBM/maxresdefault.jpg",
+    "tagline": "Clear American mouth articulation for alphabet phonemes and early sounds.",
+    "description": "Miss Monica holds up letter flashcards and clearly mouths each phoneme sound with expressive warmth.",
+    "whyHealthy": "Proper phonemic modeling without letter-name confusion.",
+    "keyVocabulary": [
+      "Letter sound /a/",
+      "Letter sound /b/",
+      "Phonics",
+      "Say it with me"
+    ],
+    "parentTip": "Repeat each sound in exaggerated slow motion: /b/ - /b/ - ball!",
+    "link": "https://www.youtube.com/watch?v=-BdH6ceLpBM",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Phonics",
+      "Letters"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "miss-monica-feelings",
+    "title": "Miss Monica: Identifying Feelings & Deep Breaths",
+    "creator": "Monica J Sutton",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "99%",
+    "youtubeId": "Q-e8UfoCDUk",
+    "thumbnail": "https://img.youtube.com/vi/Q-e8UfoCDUk/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/Q-e8UfoCDUk/maxresdefault.jpg",
+    "tagline": "\u201cIt\u2019s okay to have big feelings. Let\u2019s take three deep calming breaths.\u201d",
+    "description": "Miss Monica teaches toddlers how to recognize when their bodies feel tense, angry, or sad, modeling slow belly breathing.",
+    "whyHealthy": "Co-regulation coaching directly applicable to toddler tantrums.",
+    "keyVocabulary": [
+      "Belly breath",
+      "Inhale / Exhale",
+      "I feel happy",
+      "Calm body"
+    ],
+    "parentTip": "Put your hand on your toddler\u2019s tummy so they can feel it rise and fall.",
+    "link": "https://www.youtube.com/watch?v=Q-e8UfoCDUk",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Mindfulness",
+      "Emotional Coaching"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "miss-monica-numbers",
+    "title": "Counting Fun",
+    "creator": "Ms. Monica",
+    "platform": "YouTube",
+    "targetAges": [
+      "2"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "99%",
+    "youtubeId": "O653SjjNAzE",
+    "thumbnail": "https://img.youtube.com/vi/O653SjjNAzE/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/O653SjjNAzE/maxresdefault.jpg",
+    "tagline": "Real human educator with clear American English pronunciation.",
+    "description": "Counting Fun with real human presentation for natural speech imitation.",
+    "whyHealthy": "Real human facial framing triggers speech mirror neurons and language mimicry.",
+    "keyVocabulary": [
+      "Listen",
+      "Look",
+      "Say it with me",
+      "Great job!"
+    ],
+    "parentTip": "Watch the educator\u2019s mouth movements together and repeat the sounds.",
+    "link": "https://www.youtube.com/watch?v=O653SjjNAzE",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Speech Modeling"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "tab-time-feelings",
+    "title": "Tab Time with Tabitha Brown: Big Feelings & Love",
+    "creator": "Tabitha Brown / YouTube Kids",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2-3 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "15 min",
+    "matchScore": "99%",
+    "youtubeId": "0I7Czvht5N4",
+    "thumbnail": "https://img.youtube.com/vi/0I7Czvht5N4/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/0I7Czvht5N4/maxresdefault.jpg",
+    "tagline": "Emmy-nominated show with warm American Southern kindness and mindfulness.",
+    "description": "Tabitha Brown\u2019s soothing maternal voice welcomes toddlers into a warm living room where everyone is loved, respected, and safe.",
+    "whyHealthy": "Extraordinarily gentle, affirms self-worth, zero sensory overload.",
+    "keyVocabulary": [
+      "You are loved",
+      "Take a breath",
+      "Kindness",
+      "Big feelings are okay"
+    ],
+    "parentTip": "Hug your child when Tabitha says: \u201cRemember, you are very special and loved!\u201d",
+    "link": "https://www.youtube.com/watch?v=0I7Czvht5N4",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Emmy Nominated",
+      "Kindness",
+      "Mindfulness"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "tab-time-try-food",
+    "title": "Tab Time: Trying Healthy New Foods with Joy",
+    "creator": "Tabitha Brown",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2-3 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "14 min",
+    "matchScore": "98%",
+    "youtubeId": "SJCUJEP3PLs",
+    "thumbnail": "https://img.youtube.com/vi/SJCUJEP3PLs/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/SJCUJEP3PLs/maxresdefault.jpg",
+    "tagline": "\u201cBecause that\u2019s your business!\u201d Healthy fruits, vegetables, and curiosity.",
+    "description": "Tabitha explores colorful peppers, broccoli trees, and sweet berries with joyful curiosity, encouraging kids to take one tiny brave taste.",
+    "whyHealthy": "Reduces toddler food neophobia through positive sensory description.",
+    "keyVocabulary": [
+      "Crunchy carrot",
+      "Sweet berry",
+      "Tiny taste",
+      "Delicious",
+      "Try new things"
+    ],
+    "parentTip": "Call broccoli \u201clittle trees\u201d at dinner just like Tabitha does.",
+    "link": "https://www.youtube.com/watch?v=SJCUJEP3PLs",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Healthy Eating",
+      "Picky Eaters"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "tab-time-sharing",
+    "title": "Tab Time: I Need a Little Space",
+    "creator": "Tab Time",
+    "platform": "YouTube",
+    "targetAges": [
+      "2"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "99%",
+    "youtubeId": "dzrqfRTZO5s",
+    "thumbnail": "https://img.youtube.com/vi/dzrqfRTZO5s/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/dzrqfRTZO5s/maxresdefault.jpg",
+    "tagline": "Real human educator with clear American English pronunciation.",
+    "description": "Tab Time: I Need a Little Space with real human presentation for natural speech imitation.",
+    "whyHealthy": "Real human facial framing triggers speech mirror neurons and language mimicry.",
+    "keyVocabulary": [
+      "Listen",
+      "Look",
+      "Say it with me",
+      "Great job!"
+    ],
+    "parentTip": "Watch the educator\u2019s mouth movements together and repeat the sounds.",
+    "link": "https://www.youtube.com/watch?v=dzrqfRTZO5s",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Speech Modeling"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "bri-reads-brown-bear",
+    "title": "Bri Reads: Brown Bear, Brown Bear What Do You See?",
+    "creator": "Bri Reads (Real Teacher)",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "book",
+    "stimulation": "Calm",
+    "duration": "6 min",
+    "matchScore": "99%",
+    "youtubeId": "gfZ6tCMjjsw",
+    "thumbnail": "https://img.youtube.com/vi/gfZ6tCMjjsw/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/gfZ6tCMjjsw/maxresdefault.jpg",
+    "tagline": "Real human educator reading the physical picture book with expressive American voice.",
+    "description": "Brianna turns physical pages, points to Eric Carle\u2019s animals, and reads with animated, warm American diction.",
+    "whyHealthy": "Models how parents should read physical books to babies; clear word pointing.",
+    "keyVocabulary": [
+      "Brown Bear",
+      "Red Bird",
+      "Yellow Duck",
+      "What do you see?"
+    ],
+    "parentTip": "Point to the words in your own board book while watching Bri read.",
+    "link": "https://www.youtube.com/watch?v=gfZ6tCMjjsw",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Read Aloud",
+      "Picture Book"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "bri-reads-hungry-caterpillar",
+    "title": "Bri Reads: The Very Hungry Caterpillar",
+    "creator": "Bri Reads",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "book",
+    "stimulation": "Calm",
+    "duration": "7 min",
+    "matchScore": "99%",
+    "youtubeId": "Jr-SJj29Oxg",
+    "thumbnail": "https://img.youtube.com/vi/Jr-SJj29Oxg/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/Jr-SJj29Oxg/maxresdefault.jpg",
+    "tagline": "Real human teacher reading Eric Carle\u2019s classic counting and food masterpiece.",
+    "description": "Bri points her finger through the little caterpillar holes and models counting each fruit with expressive pauses.",
+    "whyHealthy": "Enhances print awareness and reading directionality (left to right).",
+    "keyVocabulary": [
+      "One apple",
+      "Two pears",
+      "Still hungry",
+      "Big cocoon",
+      "Butterfly"
+    ],
+    "parentTip": "Count the fruit on screen with your child\u2019s little pointer finger.",
+    "link": "https://www.youtube.com/watch?v=Jr-SJj29Oxg",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Eric Carle",
+      "Counting"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "laurie-berkner-dinosaurs",
+    "title": "The Laurie Berkner Band: We Are the Dinosaurs",
+    "creator": "The Laurie Berkner Band (Queen of Kids Folk)",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "song",
+    "stimulation": "Active",
+    "duration": "3 min",
+    "matchScore": "99%",
+    "youtubeId": "82ooOpJLzr8",
+    "thumbnail": "https://img.youtube.com/vi/82ooOpJLzr8/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/82ooOpJLzr8/maxresdefault.jpg",
+    "tagline": "\u201cMarching, marching! We are the dinosaurs, marching in the woods!\u201d",
+    "description": "American toddler anthem. Real musicians with acoustic guitar leading toddlers in stomping, marching, eating food, and resting.",
+    "whyHealthy": "Gross motor rhythm and proprioception without sensory overload.",
+    "keyVocabulary": [
+      "Marching",
+      "Stomp stomp",
+      "Eat food",
+      "Take a rest",
+      "Roar gently"
+    ],
+    "parentTip": "March around the coffee table together like friendly little dinosaurs.",
+    "link": "https://www.youtube.com/watch?v=82ooOpJLzr8",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Laurie Berkner",
+      "Marching Song"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "laurie-berkner-sleeping-bunnies",
+    "title": "Laurie Berkner: Sleeping Bunnies (Wake Up & Hop!)",
+    "creator": "The Laurie Berkner Band",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "song",
+    "stimulation": "Active",
+    "duration": "3 min",
+    "matchScore": "100%",
+    "youtubeId": "0I-b6c1rFPU",
+    "thumbnail": "https://img.youtube.com/vi/0I-b6c1rFPU/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/0I-b6c1rFPU/maxresdefault.jpg",
+    "tagline": "\u201cSee the little bunnies sleeping till it\u2019s nearly noon... wake up bunnies and HOP HOP HOP!\u201d",
+    "description": "The beloved preschool classic. Toddlers lie on the carpet pretending to sleep, then jump up and hop with pure delight.",
+    "whyHealthy": "Teaches inhibitory control (lying still -> jumping up) through joyful play.",
+    "keyVocabulary": [
+      "Sleeping bunnies",
+      "Wake up",
+      "Hop hop hop",
+      "Skip skip",
+      "Little rabbit"
+    ],
+    "parentTip": "Lie down next to your toddler and pretend to sleep until the music says \u201cWake up!\u201d",
+    "link": "https://www.youtube.com/watch?v=0I-b6c1rFPU",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Sleeping Bunnies",
+      "Gentle Game"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "laurie-berkner-goldfish",
+    "title": "Laurie Berkner: The Goldfish Song (Let\u2019s Go Swimming)",
+    "creator": "The Laurie Berkner Band",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "song",
+    "stimulation": "Active",
+    "duration": "4 min",
+    "matchScore": "98%",
+    "youtubeId": "Cg-wnQKRHTs",
+    "thumbnail": "https://img.youtube.com/vi/Cg-wnQKRHTs/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/Cg-wnQKRHTs/maxresdefault.jpg",
+    "tagline": "\u201cSwimming, swimming in the swimming pool! But wait... little fish don\u2019t ride bicycles!\u201d",
+    "description": "Hilarious American folk song where fish try to ride bikes and brush their teeth before swimming again. Toddlers adore the silly contradictions.",
+    "whyHealthy": "Builds cognitive negation and humor in English (\u201cWait a minute, fish don\u2019t wear shoes!\u201d).",
+    "keyVocabulary": [
+      "Swimming swimming",
+      "Wait a minute!",
+      "Little fish",
+      "Brush your teeth",
+      "Bicycle"
+    ],
+    "parentTip": "Laugh along when Laurie says: \u201cWait a minute! Fish don\u2019t take showers!\u201d",
+    "link": "https://www.youtube.com/watch?v=Cg-wnQKRHTs",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Silly Song",
+      "Active"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "laurie-berkner-monster-boogie",
+    "title": "The Laurie Berkner Band - Monster Boogie (Dance Remix)",
+    "creator": "LaurieBerknerVEVO",
+    "platform": "YouTube",
+    "targetAges": [
+      "2"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "99%",
+    "youtubeId": "ckdUQDtwdCI",
+    "thumbnail": "https://img.youtube.com/vi/ckdUQDtwdCI/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/ckdUQDtwdCI/maxresdefault.jpg",
+    "tagline": "Real human educator with clear American English pronunciation.",
+    "description": "The Laurie Berkner Band - Monster Boogie (Dance Remix) with real human presentation for natural speech imitation.",
+    "whyHealthy": "Real human facial framing triggers speech mirror neurons and language mimicry.",
+    "keyVocabulary": [
+      "Listen",
+      "Look",
+      "Say it with me",
+      "Great job!"
+    ],
+    "parentTip": "Watch the educator\u2019s mouth movements together and repeat the sounds.",
+    "link": "https://www.youtube.com/watch?v=ckdUQDtwdCI",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Speech Modeling"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "mister-rogers-you-are-special",
+    "title": "Mister Rogers: You Are Special (Original PBS)",
+    "creator": "Fred Rogers (Mister Rogers\u2019 Neighborhood)",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3",
+      "4"
+    ],
+    "ageDisplay": "2-3 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "5 min",
+    "matchScore": "100%",
+    "youtubeId": "MhuYv5cEvHY",
+    "thumbnail": "https://img.youtube.com/vi/MhuYv5cEvHY/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/MhuYv5cEvHY/maxresdefault.jpg",
+    "tagline": "\u201cYou are special, you\u2019re the only one like you.\u201d The gold standard of gentle media.",
+    "description": "Fred Rogers speaks in his legendary calm, respectful American cadence directly to the child. Unrivaled for toddler emotional security.",
+    "whyHealthy": "Zero fast cuts (scenes last 10+ seconds), acoustic piano, deep psychological comfort.",
+    "keyVocabulary": [
+      "You are special",
+      "Only one like you",
+      "I like you as you are",
+      "Friend"
+    ],
+    "parentTip": "Look into your child\u2019s eyes and say: \u201cI like you just the way you are.\u201d",
+    "link": "https://www.youtube.com/watch?v=MhuYv5cEvHY",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Mister Rogers",
+      "Zero Scares",
+      "Timeless Classic"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "mister-rogers-speedy-delivery",
+    "title": "Mister Rogers: It\u2019s a Beautiful Day in the Neighborhood",
+    "creator": "Fred Rogers",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "8 min",
+    "matchScore": "99%",
+    "youtubeId": "fBa6Xn6orzs",
+    "thumbnail": "https://img.youtube.com/vi/fBa6Xn6orzs/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/fBa6Xn6orzs/maxresdefault.jpg",
+    "tagline": "Changing shoes, zipping up cardigan, and feeding the fish with gentle talk.",
+    "description": "Fred Rogers enters his house, sings his iconic welcoming song, and peacefully feeds his real aquarium fish.",
+    "whyHealthy": "Predictable, comforting daily rituals foster emotional calm and security.",
+    "keyVocabulary": [
+      "Beautiful day",
+      "Neighbor",
+      "Zip up sweater",
+      "Feed the fish",
+      "Welcome"
+    ],
+    "parentTip": "Talk about changing shoes when coming home from outside.",
+    "link": "https://www.youtube.com/watch?v=fBa6Xn6orzs",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Daily Ritual",
+      "Peaceful"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "mister-rogers-curiosity",
+    "title": "Feed us Mister Rogers factory visits with a side of ASMR. #MrRogers #PBS #factory #pasta #shorts",
+    "creator": "GBH",
+    "platform": "YouTube",
+    "targetAges": [
+      "3"
+    ],
+    "ageDisplay": "3 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "99%",
+    "youtubeId": "E9tqkpk-6_0",
+    "thumbnail": "https://img.youtube.com/vi/E9tqkpk-6_0/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/E9tqkpk-6_0/maxresdefault.jpg",
+    "tagline": "Real human educator with clear American English pronunciation.",
+    "description": "Feed us Mister Rogers factory visits with a side of ASMR. #MrRogers #PBS #factory #pasta #shorts with real human presentation for natural speech imitation.",
+    "whyHealthy": "Real human facial framing triggers speech mirror neurons and language mimicry.",
+    "keyVocabulary": [
+      "Listen",
+      "Look",
+      "Say it with me",
+      "Great job!"
+    ],
+    "parentTip": "Watch the educator\u2019s mouth movements together and repeat the sounds.",
+    "link": "https://www.youtube.com/watch?v=E9tqkpk-6_0",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Speech Modeling"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "baby-signing-time-more-eat",
+    "title": "Baby Signing Time: More, Eat, Milk & Water",
+    "creator": "Rachel Coleman (Signing Time)",
+    "platform": "YouTube",
+    "targetAges": [
+      "0-1",
+      "2"
+    ],
+    "ageDisplay": "0-1 YR",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "10 min",
+    "matchScore": "100%",
+    "youtubeId": "0uK1YiHNFtU",
+    "thumbnail": "https://img.youtube.com/vi/0uK1YiHNFtU/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/0uK1YiHNFtU/maxresdefault.jpg",
+    "tagline": "Real mother and educator Rachel Coleman teaching essential baby signs.",
+    "description": "Clear American speech paired with American Sign Language for basic needs (milk, water, more, eat, please). Prevents communication meltdowns.",
+    "whyHealthy": "Directly addresses pre-verbal toddler frustration through multimodal communication.",
+    "keyVocabulary": [
+      "More",
+      "Eat",
+      "Milk",
+      "Water",
+      "Please",
+      "Thank you"
+    ],
+    "parentTip": "Sign \u201cmilk\u201d every time you hand your baby their bottle or cup.",
+    "link": "https://www.youtube.com/watch?v=0uK1YiHNFtU",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Baby Signing Time",
+      "First Needs"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
+  {
+    "id": "baby-signing-time-family",
+    "title": "Baby Signing Time - Mom Has A Mom",
+    "creator": "Baby Sign Language",
+    "platform": "YouTube",
+    "targetAges": [
+      "2"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "12 min",
+    "matchScore": "99%",
+    "youtubeId": "80XlHVght_E",
+    "thumbnail": "https://img.youtube.com/vi/80XlHVght_E/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/80XlHVght_E/maxresdefault.jpg",
+    "tagline": "Real human educator with clear American English pronunciation.",
+    "description": "Baby Signing Time - Mom Has A Mom with real human presentation for natural speech imitation.",
+    "whyHealthy": "Real human facial framing triggers speech mirror neurons and language mimicry.",
+    "keyVocabulary": [
+      "Listen",
+      "Look",
+      "Say it with me",
+      "Great job!"
+    ],
+    "parentTip": "Watch the educator\u2019s mouth movements together and repeat the sounds.",
+    "link": "https://www.youtube.com/watch?v=80XlHVght_E",
+    "tags": [
+      "Real Person",
+      "American Accent",
+      "Speech Modeling"
+    ],
+    "isRealPerson": true,
+    "accent": "American"
+  },
   {
     "id": "sarah-and-duck-cake",
     "title": "Sarah & Duck: Cake Bake (Gentle British Animation)",
@@ -527,11 +1529,15 @@ export const CONTENTS = [
     "parentTip": "Whisper along with Ms. Rachel while tucking your toddler into their crib.",
     "link": "https://www.youtube.com/watch?v=OyUoskE7Ogk",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Whisper Bedtime",
       "Zero Scares",
       "Sleep Aid",
       "Ms Rachel"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "caities-lullaby",
@@ -562,11 +1568,15 @@ export const CONTENTS = [
     "parentTip": "Hold baby against your shoulder and gently sway along to the slow rhythm.",
     "link": "https://www.youtube.com/watch?v=1jX8XyYvtWs",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Bedtime",
       "Lullaby",
       "Acoustic",
       "Infant Sleep"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "brahms-lullaby",
@@ -700,10 +1710,14 @@ export const CONTENTS = [
     "parentTip": "Wait 3 seconds after Ms. Rachel pauses and encourage your baby to vocalize.",
     "link": "https://www.youtube.com/watch?v=hTqtGJwsJVE",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Speech Foundation",
       "Babbling",
       "Face-to-Face"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "goodnight-moon",
@@ -770,11 +1784,15 @@ export const CONTENTS = [
     "parentTip": "Do the \u201cmore\u201d hand sign together whenever your toddler asks for snacks.",
     "link": "https://www.youtube.com/watch?v=zwL2o4jZxbc",
     "tags": [
+      "Real Person",
+      "American Accent",
       "First Words",
       "Baby Signs",
       "Speech Therapy",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "ms-rachel-animal-sounds",
@@ -805,10 +1823,14 @@ export const CONTENTS = [
     "parentTip": "Make silly animal faces together in the mirror.",
     "link": "https://www.youtube.com/watch?v=E2_kRmS6y8A",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Animals",
       "Oral Motor",
       "Farm"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "super-simple-open-shut",
@@ -1261,10 +2283,14 @@ export const CONTENTS = [
     "parentTip": "Answer Steve\u2019s questions out loud together with your child.",
     "link": "https://www.youtube.com/watch?v=tNaOS1_yTFE",
     "tags": [
+      "Real Person",
+      "American Accent",
       "ESL Learner",
       "Toy Words",
       "Interactive"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "old-macdonald-simple",
@@ -2266,11 +3292,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=lVD2Mp_9z9s",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Song",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "rock-a-bye-little-one-more-bed-vyyll",
@@ -2402,11 +3432,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=_ADdlaYvHmU",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Song",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "caitie-s-classroom-songs-and-s-Wt_NV",
@@ -2436,11 +3470,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=Wt_NVjv3x8A",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Song",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "good-night-sleep-tight-lullaby-GbdEh",
@@ -2538,11 +3576,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=x5PELx_HCkU",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Song",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "nap-time-kids-lullaby-Yq6qY",
@@ -3218,11 +4260,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=7sKbnum5-Kk",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Song",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "hush-little-baby-bedtime-lulla-OheHn",
@@ -4374,11 +5420,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=zmEv7vTOQGE",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "talking-time-with-ms-rachel-ba-dnHWQ",
@@ -4408,11 +5458,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=dnHWQwh1Iso",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-to-talk-for-toddlers-fir-6nRAv",
@@ -4442,11 +5496,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=6nRAv1_UFJs",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-to-talk-with-ms-rachel-v-xkYve",
@@ -4476,11 +5534,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=xkYved-ucGg",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learning-with-ms-rachel-learn--yBj9Q",
@@ -4510,11 +5572,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=yBj9Qlpwjcs",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-to-talk-with-ms-rachel-t-VvoO9",
@@ -4544,11 +5610,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=VvoO9-L1KA4",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "speech-videos-for-toddlers-and-Zuwuo",
@@ -4578,11 +5648,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=Zuwuo5u0wYs",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "first-words-for-babies-and-tod-LjBmZ",
@@ -4612,11 +5686,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=LjBmZWPX3Bk",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 0-1",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "in-the-night-garden-nap-time-f-IT9-5",
@@ -5667,11 +6745,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=05Vj6rGCauQ",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "baby-learning-videos-first-wor-CODng",
@@ -5702,11 +6784,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=CODng2ZFAHw",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "baby-sign-language-basics-and--glDJI",
@@ -5737,11 +6823,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=glDJI7UKfbw",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "old-macdonald-had-a-farm-other-VX2bE",
@@ -5772,11 +6862,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=VX2bE7y_33g",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "farm-animal-sounds-for-toddler-WbpKj",
@@ -5807,11 +6901,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=WbpKj0F-Z3s",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "play-farm-games-with-ms-rachel-tXS3X",
@@ -5842,11 +6940,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=tXS3XYyuVsU",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learning-videos-for-toddlers-a-559Qx",
@@ -5877,11 +6979,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=559QxICEleA",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "play-pretend-farm-animals-with-dU4e6",
@@ -5912,11 +7018,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=dU4e6pLhpZg",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-animals-with-ms-rachel-f-47MNn",
@@ -5947,11 +7057,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=47MNn4bsmSw",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "old-mcdonald-had-a-farm-eieio--UM83Z",
@@ -5982,11 +7096,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=UM83ZG2hvTM",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-animals-animal-sounds-wi-BYtEf",
@@ -6017,11 +7135,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=BYtEfRCz87s",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "old-mcdonald-s-had-a-farm-ms-r-VuCjO",
@@ -6052,11 +7174,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=VuCjOK6caUc",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-numbers-colors-counting--hOHrq",
@@ -6087,11 +7213,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=hOHrqPI9bVk",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "preschool-toddler-learning-vid-K_Aq4",
@@ -6122,11 +7252,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=K_Aq4H03Nm4",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-colors-fruits-and-vegeta-TyV-O",
@@ -6157,11 +7291,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=TyV-OhCrVDA",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-to-talk-toddler-learning-XtHZ_",
@@ -6192,11 +7330,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=XtHZ_8ILGgY",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-colors-with-ms-rachel-i--P-QLr",
@@ -6227,11 +7369,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=P-QLrDbOl1E",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "learn-with-ms-rachel-phonics-s-oVtzN",
@@ -6262,11 +7408,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=oVtzNpzuvoA",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "ms-rachel-elmo-get-ready-for-s-nnqsE",
@@ -6297,11 +7447,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=nnqsEUxgSBQ",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "preschool-videos-toddler-learn-noJrV",
@@ -6332,11 +7486,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=noJrVwp6akE",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "hop-little-bunnies-hop-hop-hop-gngPQ",
@@ -6367,11 +7525,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=gngPQ771Ahk",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "hop-little-bunnies-with-ms-rac-az9c0",
@@ -6402,11 +7564,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=az9c0l-IfgM",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "happy-song-i-m-so-happy-more-n-AyZNn",
@@ -6437,11 +7603,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=AyZNnxLGGlw",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "wheels-on-the-bus-more-nursery-bOiYN",
@@ -6472,11 +7642,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=bOiYN7iU-W8",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "phonics-song-more-kids-songs-n-1v3Dk",
@@ -6507,11 +7681,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=1v3Dk41C_10",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "caterpillar-song-kids-songs-an-yQyEm",
@@ -6542,11 +7720,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=yQyEmZIw1e8",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "abc-song-the-alphabet-abcs-123-b051k",
@@ -6577,11 +7759,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=b051ktudQDQ",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "open-shut-them-song-with-actio-0ETr_",
@@ -6612,11 +7798,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=0ETr_5NhX5Q",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "ms-rachel-lYo_r",
@@ -6647,11 +7837,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=lYo_r9Pq4nA",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "open-shut-them-with-ms-rachel-aI4qC",
@@ -6682,11 +7876,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=aI4qCkPmxeE",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "open-shut-them-husuJ",
@@ -11792,11 +12990,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=6TT76doHik8",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "safari-animals-more-animal-son-9nHuh",
@@ -11827,11 +13029,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=9nHuh8SrvR4",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "body-parts-for-kids-new-magic--4BrS0",
@@ -11862,11 +13068,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=4BrS0a5PUFo",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "wake-up-steve-and-maggie-more--moGcK",
@@ -11897,11 +13107,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=moGcK6dNVhM",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "ice-cream-islands-for-kids-wit-kNrPP",
@@ -11932,11 +13146,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=kNrPP599V9Q",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "family-story-for-kids-from-ste-VvrG4",
@@ -11967,11 +13185,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=VvrG4JguNQk",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "best-steve-and-maggie-magic-st-X6uqq",
@@ -12002,11 +13224,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=X6uqqJQ4Tno",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "vegetables-for-kids-with-steve-cd8HE",
@@ -12037,11 +13263,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=cd8HE9HCl-c",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "counting-numbers-for-kids-bedt-aRFFr",
@@ -12072,11 +13302,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=aRFFriLr7Zs",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "animal-safari-for-children-mor-qck_L",
@@ -12107,11 +13341,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=qck_LYQ_4bA",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "magic-toys-for-kids-english-wi-mMo8c",
@@ -12142,11 +13380,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=mMo8cWHXlck",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "magic-toys-for-kids-more-steve-Rq3Ea",
@@ -12177,11 +13419,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=Rq3EaPml8F8",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "maggie-magic-holiday-trip-stor-6NYdN",
@@ -12212,11 +13458,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=6NYdNdjTAFA",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "magic-toys-in-a-doll-s-house-f-Wxhkm",
@@ -12247,11 +13497,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=WxhkmTZ_rkY",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "toy-car-stories-from-steve-and-9oS6i",
@@ -12282,11 +13536,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=9oS6izI6RAs",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "dangerous-toys-english-for-chi-0tBTF",
@@ -12317,11 +13575,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=0tBTF6qV1ZY",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "magic-classroom-objects-more-s-XhKs6",
@@ -12352,11 +13614,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=XhKs634Y6KE",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "magic-toy-car-story-for-kids-w-1Up84",
@@ -12387,11 +13653,15 @@ export const CONTENTS = [
     "parentTip": "Ask your child what they see and point to the characters on the screen.",
     "link": "https://www.youtube.com/watch?v=1Up84ZoHQQQ",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Video",
       "Gentle",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "do-you-like-ice-cream-yucky-ki-8SQ2S",
@@ -13052,11 +14322,15 @@ export const CONTENTS = [
     "parentTip": "Watch together with soft lighting and repeat the gentle words in a whisper.",
     "link": "https://www.youtube.com/watch?v=eadWllbtJyo",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Song",
       "Calm",
       "Low Stimulation"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "how-to-teach-the-super-simple--yrszR",
@@ -14767,11 +16041,15 @@ export const CONTENTS = [
     "parentTip": "Clap hands and do the hand gestures together to lock words into muscle memory.",
     "link": "https://www.youtube.com/watch?v=If5udKwoHjc",
     "tags": [
+      "Real Person",
+      "American Accent",
       "Age 2",
       "Song",
       "Active",
       "Gentle"
-    ]
+    ],
+    "isRealPerson": true,
+    "accent": "American"
   },
   {
     "id": "if-you-re-happy-and-you-know-i-hwTwt",
@@ -16877,6 +18155,13 @@ export const CONTENTS = [
 
 export const SHELVES = [
   {
+    id: 'shelf-real-american',
+    title: '🇺🇸 Real People • American Accent (Speech & Mimicry)',
+    subtitle: 'Close-up mouth framing, baby sign language, and warm real human educators',
+    filterFn: (item) => item.isRealPerson === true || (item.tags && item.tags.includes("Real Person")),
+    badge: 'REAL EDUCATORS'
+  },
+  {
     id: 'shelf-gentle-2yo',
     title: '🐰 Ultra-Gentle & Cozy for 2-Year-Olds',
     subtitle: '100% zero scares, soft bunnies, gentle ducks, and sweet cuddles',
@@ -16892,10 +18177,10 @@ export const SHELVES = [
   },
   {
     id: 'shelf-calm',
-    title: '🌿 Ultra-Calm & Low Stimulation',
-    subtitle: 'Slow scene cuts, acoustic guitar, zero overstimulation',
+    title: '🌿 Low-Stimulation Classics',
+    subtitle: 'Slow scene cuts, acoustic instruments, zero overstimulation',
     filterFn: (item) => item.stimulation === 'Calm',
-    badge: 'CALM'
+    badge: 'LOW STIMULATION'
   },
   {
     id: 'shelf-3yo',
@@ -16906,10 +18191,17 @@ export const SHELVES = [
   },
   {
     id: 'shelf-songs',
-    title: '🎵 Sing-Along & Movement Rhymes',
+    title: '🎵 Sing-Along & Action Rhymes',
     subtitle: 'Catchy rhythms and whole-body coordination',
     filterFn: (item) => item.category === 'song',
     badge: 'SONGS'
+  },
+  {
+    id: 'shelf-books',
+    title: '📚 Picture Books & Read-Alouds',
+    subtitle: 'Bedtime stories and language pattern repetition',
+    filterFn: (item) => item.category === 'book',
+    badge: 'STORIES'
   },
   {
     id: 'shelf-phonics',
@@ -16919,11 +18211,11 @@ export const SHELVES = [
     badge: 'PHONICS'
   },
   {
-    id: 'shelf-books',
-    title: '📚 Picture Books & Read-Alouds',
-    subtitle: 'Bedtime stories and language pattern repetition',
-    filterFn: (item) => item.category === 'book',
-    badge: 'STORIES'
+    id: 'shelf-science',
+    title: '🚀 Science, Ocean & STEM Explorers (Age 5+)',
+    subtitle: 'Marine biology, creature reports, and curious questions',
+    badge: 'STEM',
+    filterFn: (item) => item.targetAges.includes('5')
   },
   {
     id: 'shelf-infant',

@@ -51,11 +51,14 @@ export default function App() {
 
   // Billboard Featured Items depending on selected age
   const featuredItems = useMemo(() => {
+    if (selectedAge === 'real') {
+      return CONTENTS.filter(item => item.isRealPerson && item.accent === 'American').slice(0, 5);
+    }
     if (selectedAge === 'all') {
-      return CONTENTS.filter(item => ['ms-rachel-first-words', 'bluey-conversations', 'super-simple-songs-baby', 'trash-truck-show'].includes(item.id));
+      return CONTENTS.filter(item => ['ms-rachel-first-words-baby', 'ms-rachel-first-words', 'bluey-keepy-uppy', 'caities-classroom-circle-time', 'puffin-rock-shining-stones'].includes(item.id));
     }
     const ageSpecific = CONTENTS.filter(item => item.targetAges.includes(selectedAge));
-    return ageSpecific.length > 0 ? ageSpecific.slice(0, 4) : CONTENTS.slice(0, 3);
+    return ageSpecific.length > 0 ? ageSpecific.slice(0, 5) : CONTENTS.slice(0, 3);
   }, [selectedAge]);
 
   // Search results
@@ -93,8 +96,61 @@ export default function App() {
       return chosen;
     };
 
+    if (selectedAge === 'real') {
+      const realItems = CONTENTS.filter(item => item.isRealPerson === true || (item.tags && item.tags.includes('Real Person')));
+      const speechItems = realItems.filter(item => (item.tags && (item.tags.includes('Speech Therapy') || item.tags.includes('Speech Delay') || item.tags.includes('Top SLP Pick') || item.tags.includes('First Words'))));
+      const readAlouds = realItems.filter(item => item.category === 'book' || (item.tags && item.tags.includes('Read Aloud')));
+      const musicItems = realItems.filter(item => item.category === 'song' || (item.tags && item.tags.includes('Sing Along')));
+      const feelingsSocial = realItems.filter(item => item.tags && (item.tags.includes('Emotions') || item.tags.includes('Mindfulness') || item.tags.includes('Mister Rogers') || item.tags.includes('Circle Time')));
+
+      return [
+        {
+          id: 'real-speech-educators',
+          title: '🇺🇸 Real People: Certified Speech Educators (Ms. Rachel & Caitie)',
+          subtitle: 'Close-up mouth framing, intentional pauses, and baby sign language',
+          badge: 'SPEECH THERAPY',
+          items: pickUnique(speechItems.length > 0 ? speechItems : realItems, 20)
+        },
+        {
+          id: 'real-books-teachers',
+          title: '📖 Real Teachers Reading Physical Picture Books (Bri Reads)',
+          subtitle: 'Clear American diction, pointing to words, and interactive page turning',
+          badge: 'READ ALOUDS',
+          items: pickUnique(readAlouds, 20)
+        },
+        {
+          id: 'real-american-music',
+          title: '🎵 Acoustic American Songs & Movement (Laurie Berkner & Ms. Rachel)',
+          subtitle: 'Acoustic guitars, sleeping bunnies, dinosaurs, and movement games',
+          badge: 'ACOUSTIC MUSIC',
+          items: pickUnique(musicItems, 20)
+        },
+        {
+          id: 'real-feelings-mindfulness',
+          title: '🌱 Emotional Reassurance & Gentle Talk (Mister Rogers & Tab Time)',
+          subtitle: 'Warm maternal and paternal encouragement, deep breaths, and kindness',
+          badge: 'EMOTIONAL SAFETY',
+          items: pickUnique(feelingsSocial, 20)
+        },
+        {
+          id: 'real-all-catalog',
+          title: '👩‍🏫 Complete Real People American Accent Library',
+          subtitle: 'Every title with real human hosts and clear American English pronunciation',
+          badge: 'ALL REAL HOSTS',
+          items: pickUnique(realItems, 24)
+        }
+      ].filter(s => s.items.length > 0);
+    }
+
     if (selectedAge === 'all') {
       const allShelvesConfig = [
+        {
+          id: 'shelf-real-american',
+          title: '🇺🇸 Real People • American Accent (Speech & Mimicry)',
+          subtitle: 'Close-up mouth framing, baby sign language, and warm real human educators',
+          badge: 'REAL EDUCATORS',
+          filterFn: (item) => item.isRealPerson === true || (item.tags && item.tags.includes('Real Person'))
+        },
         {
           id: 'shelf-gentle-2yo',
           title: '🐰 Ultra-Gentle & Cozy (Zero Scares, 100% Cuddly)',
@@ -173,8 +229,20 @@ export default function App() {
     const ageItems = CONTENTS.filter(item => item.targetAges.includes(selectedAge));
     const result = [];
 
-    // For 2 Years: Dedicated Ultra-Gentle Zero Scares row first!
+    // For 2 Years: Dedicated Real People row and Ultra-Gentle Zero Scares row first!
     if (selectedAge === '2') {
+      const real2yo = ageItems.filter(item => item.isRealPerson === true || (item.tags && item.tags.includes('Real Person')));
+      const chosenReal = pickUnique(real2yo, 20);
+      if (chosenReal.length > 0) {
+        result.push({
+          id: 'age-2-real-people',
+          title: '🇺🇸 Real People • American Accent (Toddler Speech & Mimicry)',
+          subtitle: 'Ms. Rachel, Caitie & real educators modeling clear lips and baby signs',
+          badge: 'REAL EDUCATORS',
+          items: chosenReal
+        });
+      }
+
       const ultraGentle = ageItems.filter(item => item.stimulation === 'Calm' && (item.tags.includes('Zero Scares') || item.tags.includes('Emotional Security') || item.tags.includes('Cuddly') || item.tags.includes('Low Stimulation')));
       const chosenGentle = pickUnique(ultraGentle, 20);
       if (chosenGentle.length > 0) {

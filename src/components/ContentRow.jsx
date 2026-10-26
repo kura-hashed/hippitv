@@ -98,10 +98,17 @@ export default function ContentRow({
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover/card:opacity-40 transition-opacity" />
 
-                  {/* Age Badge (Top Left) */}
-                  <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-black bg-amber-400 text-slate-950 shadow-sm">
-                    {item.ageDisplay}
-                  </span>
+                  {/* Age & Real Person Badges (Top Left) */}
+                  <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-black bg-amber-400 text-slate-950 shadow-sm">
+                      {item.ageDisplay}
+                    </span>
+                    {(item.isRealPerson || (item.tags && item.tags.includes('Real Person'))) && (
+                      <span className="px-2 py-0.5 rounded text-[10px] font-black bg-sky-500 text-white shadow-sm flex items-center gap-0.5">
+                        <span>🇺🇸 Real</span>
+                      </span>
+                    )}
+                  </div>
 
                   {/* Stimulation (Top Right) */}
                   <span className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-extrabold bg-slate-950/70 backdrop-blur-xs text-emerald-400 border border-emerald-400/30">

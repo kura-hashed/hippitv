@@ -75,6 +75,11 @@ export default function VideoPlayerModal({
                 <span className="px-2 py-0.5 rounded bg-amber-400 text-slate-950 uppercase tracking-wider">
                   {item.ageDisplay}
                 </span>
+                {(item.isRealPerson || (item.tags && item.tags.includes('Real Person'))) && (
+                  <span className="px-2 py-0.5 rounded bg-sky-500 text-white uppercase tracking-wider font-black">
+                    🇺🇸 Real Person
+                  </span>
+                )}
                 <span className="text-emerald-400 font-bold flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5" />
                   {item.stimulation === 'Calm' ? '🌿 Low-Stimulation' : '☁️ Gentle Pacing'}
