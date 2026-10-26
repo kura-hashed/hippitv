@@ -26,7 +26,7 @@ export default function VideoPlayerModal({
         <div className="relative aspect-video w-full bg-black shrink-0">
           {item.youtubeId ? (
             <iframe
-              src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+              src={`https://www.youtube.com/embed/${item.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
               title={item.title}
               className="w-full h-full border-0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
