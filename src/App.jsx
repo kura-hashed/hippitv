@@ -655,7 +655,7 @@ export default function App() {
       {/* Sleek Minimal Streaming Footer */}
       <footer className="border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 space-y-2 mb-16 md:mb-0">
         <div className="flex items-center justify-center gap-2 text-slate-400 font-bold">
-          <img src="/hippitv-logo.png?v=2" alt="HippiTV" className="w-5 h-5 rounded-md object-cover inline-block" />
+          <img src="/hippitv-logo.png?v=3" alt="HippiTV" className="w-5 h-5 rounded-md object-cover inline-block" />
           <span>HippiTV</span>
           <span>•</span>
           <span className="text-emerald-400 flex items-center gap-1">
