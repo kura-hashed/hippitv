@@ -9,6 +9,531 @@ export const AGE_TABS = [
 
 export const CONTENTS = [
   {
+    "id": "sarah-and-duck-cake",
+    "title": "Sarah & Duck: Cake Bake (Gentle British Animation)",
+    "creator": "BBC CBeebies / Karrot",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "7 min",
+    "matchScore": "100%",
+    "youtubeId": "r_0YzG5Q8-Q",
+    "thumbnail": "https://img.youtube.com/vi/r_0YzG5Q8-Q/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/r_0YzG5Q8-Q/maxresdefault.jpg",
+    "tagline": "Whimsical watercolor world with quiet acoustic guitar. 100% zero scares.",
+    "description": "Follows 7-year-old Sarah and her duck best friend. Quiet, warm, and comforting British storytelling with gentle acoustic music and no loud surprises.",
+    "whyHealthy": "Zero scary conflicts, soft acoustic score, teaches gentle kitchen cooperation and polite words.",
+    "keyVocabulary": [
+      "Bake a cake",
+      "Flour & sugar",
+      "Stir together",
+      "Quack quack",
+      "Thank you Duck"
+    ],
+    "parentTip": "Watch before nap time; Sarah\u2019s soft-spoken narrator calms toddler energy instantly.",
+    "link": "https://www.youtube.com/watch?v=r_0YzG5Q8-Q",
+    "tags": [
+      "Zero Scares",
+      "Gentle British",
+      "Acoustic",
+      "Cuddly"
+    ]
+  },
+  {
+    "id": "sarah-and-duck-shallots",
+    "title": "Sarah & Duck: Lots of Shallots (Gentle Gardening)",
+    "creator": "BBC CBeebies",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "7 min",
+    "matchScore": "99%",
+    "youtubeId": "8ZdUQDdgRHA",
+    "thumbnail": "https://img.youtube.com/vi/8ZdUQDdgRHA/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/8ZdUQDdgRHA/maxresdefault.jpg",
+    "tagline": "Singing to baby onion plants in the garden. Peaceful and heartwarming.",
+    "description": "Sarah plants tiny shallots in her garden bed and waters them with care. Unhurried pacing that respects a 2-year-old\u2019s sensitive auditory processing.",
+    "whyHealthy": "Quiet dialogue, soothing natural garden sounds, models nurturing kindness.",
+    "keyVocabulary": [
+      "Little plant",
+      "Watering can",
+      "Sing a gentle song",
+      "Grow grow",
+      "Sunshine"
+    ],
+    "parentTip": "Water a real household plant together right after watching!",
+    "link": "https://www.youtube.com/watch?v=8ZdUQDdgRHA",
+    "tags": [
+      "Peaceful",
+      "Nature",
+      "No Loud Sounds",
+      "Gentle Story"
+    ]
+  },
+  {
+    "id": "puffin-rock-shining-stones",
+    "title": "Puffin Rock: Oona & Baby Baba\u2019s Cozy Island",
+    "creator": "Cartoon Saloon / Netflix Jr",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "10 min",
+    "matchScore": "100%",
+    "youtubeId": "0JxzhxrnPGU",
+    "thumbnail": "https://img.youtube.com/vi/0JxzhxrnPGU/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/0JxzhxrnPGU/maxresdefault.jpg",
+    "tagline": "Sweet baby puffin Baba and big sister Oona. The coziest show on television.",
+    "description": "Narrated with boundless warmth by Chris O\u2019Dowd. Explores tide pools and mossy cliffs with soft pastel Irish art and zero scary predators.",
+    "whyHealthy": "Renowned by pediatricians for low arousal levels and beautiful sibling gentleness.",
+    "keyVocabulary": [
+      "Baby brother Baba",
+      "Shiny stone",
+      "Pretty shell",
+      "Hold my wing",
+      "Safe at home"
+    ],
+    "parentTip": "Hug your toddler when Oona hugs baby Baba: \u201cJust like you and me!\u201d",
+    "link": "https://www.youtube.com/watch?v=0JxzhxrnPGU",
+    "tags": [
+      "Sibling Love",
+      "Pastel World",
+      "Zero Scares",
+      "Cozy Animal"
+    ]
+  },
+  {
+    "id": "puffin-rock-baba",
+    "title": "Puffin Rock: Baba\u2019s Little Waddles",
+    "creator": "Cartoon Saloon / Netflix Jr",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "21 min",
+    "matchScore": "99%",
+    "youtubeId": "0dhQIS9wPvA",
+    "thumbnail": "https://img.youtube.com/vi/0dhQIS9wPvA/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/0dhQIS9wPvA/maxresdefault.jpg",
+    "tagline": "Gentle compilations of cute baby puffin Baba learning to waddle and splash.",
+    "description": "Baba is pure toddler innocence: exploring pebbles, splashing in gentle waves, and giggling with Mossy the pygmy shrew.",
+    "whyHealthy": "Predictable calm pacing, no antagonists or conflicts, rich descriptive vocabulary.",
+    "keyVocabulary": [
+      "Waddle waddle",
+      "Splash!",
+      "Little toes",
+      "Happy puffin",
+      "Cuddle"
+    ],
+    "parentTip": "Copy Baba\u2019s funny waddling walk across the living room carpet together.",
+    "link": "https://www.youtube.com/watch?v=0dhQIS9wPvA",
+    "tags": [
+      "Baby Puffin",
+      "Cozy Sounds",
+      "Gentle Pacing"
+    ]
+  },
+  {
+    "id": "guess-how-much-i-love-you",
+    "title": "Guess How Much I Love You: Hare Bedtime Tale",
+    "creator": "Sam McBratney & Anita Jeram",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "book",
+    "stimulation": "Calm",
+    "duration": "5 min",
+    "matchScore": "100%",
+    "youtubeId": "lC7ya6kmWTM",
+    "thumbnail": "https://img.youtube.com/vi/lC7ya6kmWTM/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/lC7ya6kmWTM/maxresdefault.jpg",
+    "tagline": "\u201cI love you right up to the moon \u2014 and back.\u201d Pure unconditional love.",
+    "description": "Little Nutbrown Hare and Big Nutbrown Hare compare how wide their arms can stretch to show their love. The gold standard for soothing toddler anxiety.",
+    "whyHealthy": "Strengthens emotional security, reduces bedtime separation fear, soft watercolor art.",
+    "keyVocabulary": [
+      "I love you",
+      "As wide as my arms",
+      "High as I can hop",
+      "To the moon and back"
+    ],
+    "parentTip": "Stretch your arms as wide as you can and wrap your 2-year-old in a big cuddle.",
+    "link": "https://www.youtube.com/watch?v=lC7ya6kmWTM",
+    "tags": [
+      "Bedtime Love",
+      "Cuddle Story",
+      "Emotional Security",
+      "Zero Fear"
+    ]
+  },
+  {
+    "id": "maisy-mouse-bedtime",
+    "title": "Maisy Mouse: Cozy Bedtime Routine",
+    "creator": "Lucy Cousins / Universal",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "5 min",
+    "matchScore": "99%",
+    "youtubeId": "TZTIkzAMvnY",
+    "thumbnail": "https://img.youtube.com/vi/TZTIkzAMvnY/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/TZTIkzAMvnY/maxresdefault.jpg",
+    "tagline": "Warm bath, soft pajamas, brush teeth, and storybook with Teddy.",
+    "description": "Maisy\u2019s comforting 5-minute evening routine. Primary bold colors and simple acoustic oboe music without any rapid cuts or loud noises.",
+    "whyHealthy": "Models bedtime independence and calms toddler transition resistance.",
+    "keyVocabulary": [
+      "Pajamas on",
+      "Brush your teeth",
+      "Tuck in Teddy",
+      "Goodnight Maisy"
+    ],
+    "parentTip": "Tuck your toddler\u2019s favorite stuffed teddy into bed just like Maisy does.",
+    "link": "https://www.youtube.com/watch?v=TZTIkzAMvnY",
+    "tags": [
+      "Bedtime Routine",
+      "Teddy Bear",
+      "Comforting",
+      "Cute Mouse"
+    ]
+  },
+  {
+    "id": "maisy-mouse-farm",
+    "title": "Maisy Mouse: Friendly Farm Animals",
+    "creator": "Lucy Cousins",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "5 min",
+    "matchScore": "98%",
+    "youtubeId": "52nUno2IesA",
+    "thumbnail": "https://img.youtube.com/vi/52nUno2IesA/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/52nUno2IesA/maxresdefault.jpg",
+    "tagline": "Feeding gentle friendly animals: horses, sheep, and baby chicks.",
+    "description": "Maisy feeds oats to gentle horses and scatters grain for friendly chicks. 100% peaceful farm day with cheerful acoustic whistling.",
+    "whyHealthy": "Friendly, non-intimidating animal introduction for toddlers who may fear loud barking.",
+    "keyVocabulary": [
+      "Friendly horse",
+      "Baby chicks (cheep cheep)",
+      "Sweet sheep",
+      "Good morning"
+    ],
+    "parentTip": "Make quiet gentle chick sounds together: \u201cCheep cheep cheep!\u201d",
+    "link": "https://www.youtube.com/watch?v=52nUno2IesA",
+    "tags": [
+      "Gentle Animals",
+      "Farm Day",
+      "No Scary Sounds"
+    ]
+  },
+  {
+    "id": "miffy-bunny-garden",
+    "title": "Miffy & Friends: Cute Bunny Family Trip",
+    "creator": "Dick Bruna / Mercis BV",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "10 min",
+    "matchScore": "98%",
+    "youtubeId": "R-iL-pvzcwI",
+    "thumbnail": "https://img.youtube.com/vi/R-iL-pvzcwI/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/R-iL-pvzcwI/maxresdefault.jpg",
+    "tagline": "Minimalist Dutch classic with soft storybook narration and sweet bunnies.",
+    "description": "Miffy the cute little bunny goes on a gentle ride through the countryside. Clean primary colors and peaceful silence between sentences.",
+    "whyHealthy": "Clear visual focus prevents sensory overwhelm; Dick Bruna\u2019s timeless peaceful aesthetic.",
+    "keyVocabulary": [
+      "Miffy bunny",
+      "Green trees",
+      "Happy family",
+      "Bicycle ride",
+      "Smile"
+    ],
+    "parentTip": "Point out the colors on screen: yellow sun, blue sky, green grass.",
+    "link": "https://www.youtube.com/watch?v=R-iL-pvzcwI",
+    "tags": [
+      "Minimalist",
+      "Sweet Bunny",
+      "Quiet Cartoon"
+    ]
+  },
+  {
+    "id": "bing-bunny-presents",
+    "title": "Bing & Flop: Feeding the Little Ducks",
+    "creator": "Acamar Films / CBeebies",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "8 min",
+    "matchScore": "99%",
+    "youtubeId": "x6fUpD2DQzc",
+    "thumbnail": "https://img.youtube.com/vi/x6fUpD2DQzc/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/x6fUpD2DQzc/maxresdefault.jpg",
+    "tagline": "\u201cFeeding the ducks... it\u2019s a Bing thing!\u201d Gentle toddler emotional coaching.",
+    "description": "Bing bunny and his soft caregiver Flop walk to the pond to feed ducks. When a duck quacks softly, Flop reassures Bing that the duck is just saying hello.",
+    "whyHealthy": "Models how calm caregivers can co-regulate toddler fears of animals and surprises.",
+    "keyVocabulary": [
+      "Hello ducks",
+      "Gentle breadcrumbs",
+      "Don\u2019t be scared",
+      "Quack quack",
+      "Nice and quiet"
+    ],
+    "parentTip": "Use Flop\u2019s gentle whisper tone when your toddler encounters something unfamiliar.",
+    "link": "https://www.youtube.com/watch?v=x6fUpD2DQzc",
+    "tags": [
+      "Emotional Reassurance",
+      "Friendly Ducks",
+      "No Scares"
+    ]
+  },
+  {
+    "id": "skidamarink-i-love-you",
+    "title": "Skidamarink (I Love You Song for Toddlers)",
+    "creator": "Super Simple Songs",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "song",
+    "stimulation": "Calm",
+    "duration": "3 min",
+    "matchScore": "100%",
+    "youtubeId": "l2OJWHrmajg",
+    "thumbnail": "https://img.youtube.com/vi/l2OJWHrmajg/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/l2OJWHrmajg/maxresdefault.jpg",
+    "tagline": "\u201cI love you in the morning and in the afternoon, I love you in the evening!\u201d",
+    "description": "The most heartwarming declaration of love in the English language. Soft ukulele accompaniment and gentle cartoon hugging.",
+    "whyHealthy": "Affirms parent-child attachment security while teaching morning, afternoon, and evening.",
+    "keyVocabulary": [
+      "I love you",
+      "Morning",
+      "Afternoon",
+      "Evening",
+      "Underneath the moon"
+    ],
+    "parentTip": "Sing this into your 2-year-old\u2019s ear while rocking them in your arms.",
+    "link": "https://www.youtube.com/watch?v=l2OJWHrmajg",
+    "tags": [
+      "I Love You",
+      "Attachment Bonding",
+      "Sweet Lullaby"
+    ]
+  },
+  {
+    "id": "butterfly-song-gentle",
+    "title": "Butterfly, Ladybug, Bumblebee (Pastel Garden)",
+    "creator": "Super Simple Songs",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "song",
+    "stimulation": "Calm",
+    "duration": "3 min",
+    "matchScore": "98%",
+    "youtubeId": "EgiQ6GliTrI",
+    "thumbnail": "https://img.youtube.com/vi/EgiQ6GliTrI/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/EgiQ6GliTrI/maxresdefault.jpg",
+    "tagline": "Soft pastel garden with gentle fluttering butterflies and smiling bugs.",
+    "description": "Zero loud buzzing! Gentle xylophone and soft acoustic guitar introduce friendly garden creatures fluttering from flower to flower.",
+    "whyHealthy": "Helps toddlers overcome fear of small insects by depicting them as cute pastel friends.",
+    "keyVocabulary": [
+      "Butterfly flutter",
+      "Ladybug crawl",
+      "Bumblebee buzz",
+      "Flower"
+    ],
+    "parentTip": "Make your hands flutter like gentle butterfly wings together.",
+    "link": "https://www.youtube.com/watch?v=EgiQ6GliTrI",
+    "tags": [
+      "Pastel Garden",
+      "Gentle Insects",
+      "Calm Music"
+    ]
+  },
+  {
+    "id": "bumble-nums-sweet-strawberry",
+    "title": "The Bumble Nums: Sparkling Strawberry Kitchen",
+    "creator": "Super Simple Songs",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "5 min",
+    "matchScore": "97%",
+    "youtubeId": "g87HmN01w-s",
+    "thumbnail": "https://img.youtube.com/vi/g87HmN01w-s/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/g87HmN01w-s/maxresdefault.jpg",
+    "tagline": "Three fluffy, fuzzy friends gather sweet red strawberries to make a smoothie.",
+    "description": "Humble, Grumble, and Stumble are adorably cute fuzzy characters. They bounce softly through strawberry fields and cook delicious fruit snacks.",
+    "whyHealthy": "Cuddly, cheerful character designs with gentle teamwork and zero conflict.",
+    "keyVocabulary": [
+      "Sweet strawberry",
+      "One, two, three berries",
+      "Yummy smoothie",
+      "Mmm so good!"
+    ],
+    "parentTip": "Count red strawberries on your toddler\u2019s plate at snack time.",
+    "link": "https://www.youtube.com/watch?v=g87HmN01w-s",
+    "tags": [
+      "Fuzzy Friends",
+      "Cute Cooking",
+      "Sweet Fruit"
+    ]
+  },
+  {
+    "id": "ten-little-fingers-toes",
+    "title": "Ten Little Fingers & Ten Little Toes",
+    "creator": "Mem Fox & Helen Oxenbury (Read by Mem Fox)",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "book",
+    "stimulation": "Calm",
+    "duration": "4 min",
+    "matchScore": "100%",
+    "youtubeId": "-Pd3apkZ-_Q",
+    "thumbnail": "https://img.youtube.com/vi/-Pd3apkZ-_Q/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/-Pd3apkZ-_Q/maxresdefault.jpg",
+    "tagline": "\u201cAnd both of these babies, as everyone knows, had ten little fingers and ten little toes... and three little kisses on the tip of the nose!\u201d",
+    "description": "Celebrated Australian author Mem Fox reads her warm, inclusive rhyming masterpiece celebrating babies around the world.",
+    "whyHealthy": "Physical touch, gentle rhyme, and universal human connection for early bonding.",
+    "keyVocabulary": [
+      "Ten little fingers",
+      "Ten little toes",
+      "Sweet kiss on the nose",
+      "Cuddle"
+    ],
+    "parentTip": "Give three soft gentle kisses on the tip of your baby\u2019s nose at the end!",
+    "link": "https://www.youtube.com/watch?v=-Pd3apkZ-_Q",
+    "tags": [
+      "Baby Cuddles",
+      "Soft Rhyme",
+      "Tender Love"
+    ]
+  },
+  {
+    "id": "clifford-puppy-days",
+    "title": "Clifford\u2019s Puppy Days: Tiny Red Puppy Stories",
+    "creator": "Scholastic / PBS KIDS",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "3"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "11 min",
+    "matchScore": "98%",
+    "youtubeId": "SYfxhXkF_Nk",
+    "thumbnail": "https://img.youtube.com/vi/SYfxhXkF_Nk/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/SYfxhXkF_Nk/maxresdefault.jpg",
+    "tagline": "Before he grew giant, Clifford was a tiny cuddly puppy who fit in an apartment.",
+    "description": "Adorable baby Clifford plays gently with his kitten friend Flo and bunny friend Jorge. Soft storytelling focused on being small and learning new things.",
+    "whyHealthy": "Gentle puppy themes without scary barking or aggressive chase scenes.",
+    "keyVocabulary": [
+      "Tiny puppy",
+      "Play with friends",
+      "Little paws",
+      "Good boy Clifford"
+    ],
+    "parentTip": "Pet a stuffed dog gently and practice saying \u201cSoft, gentle puppy.\u201d",
+    "link": "https://www.youtube.com/watch?v=SYfxhXkF_Nk",
+    "tags": [
+      "Cute Puppy",
+      "Gentle Play",
+      "PBS Kids"
+    ]
+  },
+  {
+    "id": "ms-rachel-bedtime-cuddle",
+    "title": "Ms. Rachel: Bedtime Stories & Gentle Lullabies",
+    "creator": "Ms. Rachel - Toddler Learning",
+    "platform": "YouTube",
+    "targetAges": [
+      "2",
+      "0-1"
+    ],
+    "ageDisplay": "2 YRS",
+    "category": "video",
+    "stimulation": "Calm",
+    "duration": "25 min",
+    "matchScore": "100%",
+    "youtubeId": "OyUoskE7Ogk",
+    "thumbnail": "https://img.youtube.com/vi/OyUoskE7Ogk/hqdefault.jpg",
+    "backdrop": "https://img.youtube.com/vi/OyUoskE7Ogk/maxresdefault.jpg",
+    "tagline": "Whispered bedtime talk, tucking in teddy, and calming lullabies for deep sleep.",
+    "description": "Ms. Rachel dims the lights, lowers her voice to a warm whisper, and walks toddlers through a soothing pre-bed wind-down. 100% serene.",
+    "whyHealthy": "Acoustic lullabies, soft vocal tones, and zero fast camera cuts soothe toddler night anxiety.",
+    "keyVocabulary": [
+      "Time for sleep",
+      "Tuck in blanket",
+      "Close your eyes",
+      "Sweet dreams",
+      "I love you"
+    ],
+    "parentTip": "Whisper along with Ms. Rachel while tucking your toddler into their crib.",
+    "link": "https://www.youtube.com/watch?v=OyUoskE7Ogk",
+    "tags": [
+      "Whisper Bedtime",
+      "Zero Scares",
+      "Sleep Aid",
+      "Ms Rachel"
+    ]
+  },
+  {
     "id": "caities-lullaby",
     "title": "Rock-A-Bye Baby & Lullabies for Bedtime",
     "creator": "Caitie\u2019s Classroom (Super Simple)",
@@ -1716,6 +2241,13 @@ export const CONTENTS = [
 ];
 
 export const SHELVES = [
+  {
+    id: 'shelf-gentle-2yo',
+    title: '🐰 Ultra-Gentle & Cozy for 2-Year-Olds',
+    subtitle: '100% zero scares, soft bunnies, gentle ducks, and sweet cuddles',
+    filterFn: (item) => item.targetAges.includes('2') && item.stimulation === 'Calm',
+    badge: 'ZERO SCARES'
+  },
   {
     id: 'shelf-2yo',
     title: 'Top Picks for 2-Year-Olds',

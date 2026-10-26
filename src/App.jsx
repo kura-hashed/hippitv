@@ -83,21 +83,33 @@ export default function App() {
 
     // When an age is selected (e.g. 2 Years), build age-dedicated rows
     const ageItems = CONTENTS.filter(item => item.targetAges.includes(selectedAge));
+    const ultraGentle = ageItems.filter(item => item.stimulation === 'Calm' && (item.tags.includes('Zero Scares') || item.tags.includes('Emotional Security') || item.tags.includes('Cuddly') || item.tags.includes('Low Stimulation')));
     const calmItems = ageItems.filter(item => item.stimulation === 'Calm');
     const songItems = ageItems.filter(item => item.category === 'song');
     const storyItems = ageItems.filter(item => item.category === 'book' || item.category === 'video');
 
-    const result = [
-      {
-        id: `age-${selectedAge}-top`,
-        title: `★ Top Picks for ${AGE_TABS.find(t => t.id === selectedAge)?.label || 'This Age'}`,
-        subtitle: 'Curated gentle and speech-boosting favorites',
-        badge: 'TOP PICKS',
-        items: ageItems
-      }
-    ];
+    const result = [];
 
-    if (calmItems.length > 0) {
+    // For 2 Years: Showcase the ultra-gentle, non-scary cozy row right at the very top!
+    if (selectedAge === '2' && ultraGentle.length > 0) {
+      result.push({
+        id: `age-2-ultra-gentle`,
+        title: '🐰 Ultra-Gentle & Cozy (Zero Scares, 100% Cuddly)',
+        subtitle: 'Soft bunnies, gentle ducks, warm hugs, and zero loud surprises',
+        badge: 'ZERO SCARES',
+        items: ultraGentle
+      });
+    }
+
+    result.push({
+      id: `age-${selectedAge}-top`,
+      title: `★ Top Picks for ${AGE_TABS.find(t => t.id === selectedAge)?.label || 'This Age'}`,
+      subtitle: 'Curated gentle and speech-boosting favorites',
+      badge: 'TOP PICKS',
+      items: ageItems
+    });
+
+    if (calmItems.length > 0 && selectedAge !== '2') {
       result.push({
         id: `age-${selectedAge}-calm`,
         title: '🌿 Low-Stimulation & Calm Pacing',
