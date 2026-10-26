@@ -11,7 +11,7 @@ export default function Footer({ onSelectAge, onOpenHealthyGuide, onOpenMileston
           {/* Brand Col */}
           <div className="space-y-3 md:col-span-1">
             <div className="flex items-center gap-2">
-              <img src="/hippitv-logo.png?v=3" alt="HippiTV" className="w-8 h-8 rounded-xl object-cover shadow-sm" />
+              <img src="/hippitv-logo.png?v=4" alt="HippiTV" className="w-8 h-8 rounded-xl object-cover shadow-sm" />
               <span className="text-xl font-black text-slate-800">
                 Hippi<span className="text-amber-500 font-extrabold">TV</span>
               </span>

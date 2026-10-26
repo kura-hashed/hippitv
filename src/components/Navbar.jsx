@@ -46,7 +46,7 @@ export default function Navbar({
           >
             <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform border border-amber-400/40 bg-amber-400 shrink-0">
               <img
-                src="/hippitv-logo.png?v=3"
+                src="/hippitv-logo.png?v=4"
                 alt="HippiTV"
                 className="w-full h-full object-cover"
               />
