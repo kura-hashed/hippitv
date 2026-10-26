@@ -86,14 +86,14 @@ export default function Navbar({
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Search video, Ms Rachel..."
-                  className="w-28 sm:w-48 md:w-56 pl-8 pr-7 py-1.5 rounded-full text-xs bg-white/10 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:bg-white/15 focus:border-amber-400 transition-all font-medium"
+                  placeholder="Search video..."
+                  className="w-28 focus:w-44 sm:w-48 md:w-56 sm:focus:w-56 pl-7 sm:pl-8 pr-7 py-1.5 rounded-full text-xs bg-white/10 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:bg-white/15 focus:border-amber-400 transition-all duration-300 font-medium"
                 />
-                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 pointer-events-none" />
+                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2 pointer-events-none" />
                 {searchTerm && (
                   <button
                     onClick={() => setSearchTerm('')}
-                    className="absolute right-2 text-slate-400 hover:text-white p-0.5"
+                    className="absolute right-2 text-slate-400 hover:text-white p-0.5 cursor-pointer"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
@@ -101,14 +101,14 @@ export default function Navbar({
               </div>
             </div>
 
-            {/* Watch History Button (YouTube Style) */}
+            {/* Watch History Button (Desktop & Tablet - on Mobile it is in BottomNav) */}
             <button
               onClick={onOpenHistory}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold border border-white/10 transition-all cursor-pointer active:scale-95"
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold border border-white/10 transition-all cursor-pointer active:scale-95"
               title="Watch History & Progress"
             >
               <Clock className="w-3.5 h-3.5 text-red-400" />
-              <span className="hidden sm:inline">History</span>
+              <span>History</span>
               {historyCount > 0 && (
                 <span className="w-4 h-4 rounded-full bg-red-600 text-white text-[10px] font-black flex items-center justify-center">
                   {historyCount}
@@ -116,14 +116,14 @@ export default function Navbar({
               )}
             </button>
 
-            {/* My List / Favorites Button */}
+            {/* My List / Favorites Button (Desktop & Tablet - on Mobile it is in BottomNav) */}
             <button
               onClick={onOpenMyList}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold border border-white/10 transition-all cursor-pointer active:scale-95"
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold border border-white/10 transition-all cursor-pointer active:scale-95"
               title="Saved Playlist"
             >
               <Heart className={`w-3.5 h-3.5 ${favoritesCount > 0 ? 'fill-rose-500 text-rose-500' : 'text-slate-300'}`} />
-              <span className="hidden md:inline">My List</span>
+              <span>My List</span>
               {favoritesCount > 0 && (
                 <span className="w-4 h-4 rounded-full bg-rose-500 text-white text-[10px] font-black flex items-center justify-center">
                   {favoritesCount}
@@ -239,17 +239,20 @@ export default function Navbar({
 
         </div>
 
-        {/* Mobile Age Pills Bar */}
-        <div className="flex lg:hidden items-center gap-1.5 overflow-x-auto py-2.5 no-scrollbar border-t border-white/5">
+        {/* Mobile Age Pills Bar (Fast Thumb Category Switching) */}
+        <div className="flex lg:hidden items-center gap-1.5 overflow-x-auto py-2 px-1 no-scrollbar scroll-smooth-touch touch-pan-x border-t border-white/5">
           {AGE_TABS.map((tab) => {
             const isActive = selectedAge === tab.id;
             return (
               <button
                 key={tab.id}
-                onClick={() => onSelectAge(tab.id)}
-                className={`px-3 py-1 rounded-full text-[11px] font-extrabold shrink-0 transition-all ${
+                onClick={() => {
+                  onSelectAge(tab.id);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className={`px-3 py-1.5 rounded-full text-xs font-black shrink-0 transition-all cursor-pointer active:scale-95 ${
                   isActive
-                    ? 'bg-amber-400 text-slate-950 font-black'
+                    ? 'bg-amber-400 text-slate-950 shadow-sm shadow-amber-400/20'
                     : 'bg-white/5 text-slate-300 hover:bg-white/10'
                 }`}
               >

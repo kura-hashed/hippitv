@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, Play, RotateCcw, Trash2, Clock, CheckCircle2, ChevronRight } from 'lucide-react';
 
 export default function WatchHistoryDrawer({
@@ -10,6 +10,16 @@ export default function WatchHistoryDrawer({
   onRemoveHistoryItem,
   onClearHistory
 }) {
+  // Lock body scroll when history drawer is open
+  useEffect(() => {
+    if (!isOpen) return;
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   // Format seconds to mm:ss
@@ -40,7 +50,7 @@ export default function WatchHistoryDrawer({
         onClick={onClose}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-8">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-8">
         <div className="w-screen max-w-lg bg-slate-900 border-l border-white/10 shadow-2xl flex flex-col text-white">
           
           {/* Header */}

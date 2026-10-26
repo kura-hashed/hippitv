@@ -25,7 +25,7 @@ export default function BillboardHero({
   const isSaved = isFavorite(currentItem.id);
 
   return (
-    <section className="relative w-full h-[68vh] min-h-[440px] max-h-[620px] overflow-hidden bg-slate-950 flex items-end">
+    <section className="relative w-full h-[52vh] sm:h-[62vh] md:h-[68vh] min-h-[380px] sm:min-h-[440px] max-h-[620px] overflow-hidden bg-slate-950 flex items-end">
       
       {/* Background Backdrop Image */}
       <div className="absolute inset-0 z-0">
@@ -40,46 +40,46 @@ export default function BillboardHero({
       </div>
 
       {/* Hero Content Overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 w-full">
-        <div className="max-w-2xl space-y-3 sm:space-y-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 md:pb-16 w-full">
+        <div className="max-w-2xl space-y-2.5 sm:space-y-4">
           
           {/* Metadata Badges */}
-          <div className="flex flex-wrap items-center gap-2 text-xs font-black">
-            <span className="px-2 py-0.5 rounded bg-amber-400 text-slate-950 uppercase tracking-wider">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-black">
+            <span className="px-2 py-0.5 rounded bg-amber-400 text-slate-950 uppercase tracking-wider text-[10px] sm:text-xs">
               {currentItem.ageDisplay}
             </span>
             {(currentItem.isRealPerson || (currentItem.tags && currentItem.tags.includes('Real Person'))) && (
-              <span className="px-2 py-0.5 rounded bg-sky-500 text-white uppercase tracking-wider font-black">
-                🇺🇸 Real Person
+              <span className="px-2 py-0.5 rounded bg-sky-500 text-white uppercase tracking-wider font-black text-[10px] sm:text-xs">
+                🇺🇸 Real<span className="hidden sm:inline"> Person</span>
               </span>
             )}
-            <span className="text-emerald-400 font-bold flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5" />
+            <span className="text-emerald-400 font-bold flex items-center gap-1 text-[11px] sm:text-xs">
+              <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
               {currentItem.stimulation === 'Calm' ? '🌿 Low-Stimulation' : '☁️ Gentle Pacing'}
             </span>
-            <span className="text-slate-400">•</span>
-            <span className="text-slate-300 font-bold">{currentItem.duration}</span>
-            <span className="text-slate-400">•</span>
-            <span className="text-amber-400 font-bold">{currentItem.creator}</span>
+            <span className="text-slate-400 hidden xs:inline">•</span>
+            <span className="text-slate-300 font-bold hidden xs:inline">{currentItem.duration}</span>
+            <span className="text-slate-400 hidden sm:inline">•</span>
+            <span className="text-amber-400 font-bold hidden sm:inline">{currentItem.creator}</span>
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight drop-shadow-md">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-snug drop-shadow-md line-clamp-2">
             {currentItem.title}
           </h1>
 
           {/* Tagline */}
-          <p className="text-sm sm:text-base text-slate-200 line-clamp-2 leading-relaxed font-medium drop-shadow-xs max-w-xl">
+          <p className="text-xs sm:text-sm md:text-base text-slate-200 line-clamp-2 leading-relaxed font-medium drop-shadow-xs max-w-xl">
             {currentItem.tagline}
           </p>
 
-          {/* Action Buttons */}
-          <div className="flex items-center gap-3 pt-2">
+          {/* Action Buttons (Touch-friendly 44px+ height) */}
+          <div className="flex items-center gap-2.5 sm:gap-3 pt-1 sm:pt-2">
             
             {/* Play Button */}
             <button
               onClick={() => onPlay(currentItem)}
-              className="flex items-center gap-2 px-6 py-2.5 sm:py-3 rounded-xl bg-white hover:bg-slate-200 text-slate-950 font-black text-sm transition-all shadow-lg hover:scale-105 active:scale-95 cursor-pointer"
+              className="flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl min-h-[44px] bg-white hover:bg-slate-200 text-slate-950 font-black text-xs sm:text-sm transition-all shadow-lg active:scale-95 cursor-pointer"
             >
               <Play className="w-4 h-4 fill-slate-950" />
               <span>Watch Now</span>
@@ -88,7 +88,7 @@ export default function BillboardHero({
             {/* My List Button */}
             <button
               onClick={() => onToggleFavorite(currentItem.id)}
-              className="flex items-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl bg-white/20 hover:bg-white/30 text-white font-extrabold text-sm backdrop-blur-md transition-all cursor-pointer"
+              className="flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl min-h-[44px] bg-white/20 hover:bg-white/30 text-white font-extrabold text-xs sm:text-sm backdrop-blur-md transition-all active:scale-95 cursor-pointer"
             >
               {isSaved ? (
                 <>
@@ -106,7 +106,7 @@ export default function BillboardHero({
             {/* More Info */}
             <button
               onClick={() => onMoreInfo(currentItem)}
-              className="flex items-center gap-1.5 px-4 py-2.5 sm:py-3 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white font-bold text-sm backdrop-blur-md transition-all cursor-pointer"
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl min-h-[44px] bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white font-bold text-xs sm:text-sm backdrop-blur-md transition-all active:scale-95 cursor-pointer"
             >
               <Info className="w-4 h-4" />
               <span className="hidden sm:inline">Details</span>

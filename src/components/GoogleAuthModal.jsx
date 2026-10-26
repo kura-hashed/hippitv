@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, ShieldCheck, Check, Sparkles } from 'lucide-react';
 
 export default function GoogleAuthModal({ isOpen, onClose, onLoginSuccess }) {
@@ -6,6 +6,16 @@ export default function GoogleAuthModal({ isOpen, onClose, onLoginSuccess }) {
   const [customName, setCustomName] = useState('');
   const [customEmail, setCustomEmail] = useState('');
   const [showCustom, setShowCustom] = useState(false);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (!isOpen) return;
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 

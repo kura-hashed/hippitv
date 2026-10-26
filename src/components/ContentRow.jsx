@@ -77,7 +77,7 @@ export default function ContentRow({
         <div
           ref={rowRef}
           onScroll={checkScroll}
-          className="flex items-center gap-3 sm:gap-4 overflow-x-auto no-scrollbar scroll-smooth-touch px-4 sm:px-6 lg:px-8 py-2"
+          className="flex items-center gap-3 sm:gap-4 overflow-x-auto no-scrollbar scroll-smooth-touch snap-x snap-mandatory touch-pan-x px-4 sm:px-6 lg:px-8 py-2"
         >
           {items.map((item) => {
             const isSaved = isFavorite(item.id);
@@ -86,7 +86,7 @@ export default function ContentRow({
               <div
                 key={item.id}
                 onClick={() => onPlay(item)}
-                className="shrink-0 w-64 sm:w-72 md:w-80 group/card cursor-pointer relative transition-transform duration-300 hover:scale-[1.03] hover:z-20"
+                className="shrink-0 w-52 sm:w-64 md:w-80 snap-start group/card cursor-pointer relative transition-transform duration-300 hover:scale-[1.03] hover:z-20 active:scale-95 sm:active:scale-100"
               >
                 {/* 16:9 Thumbnail Image */}
                 <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-md group-hover/card:border-amber-400/60 transition-colors">

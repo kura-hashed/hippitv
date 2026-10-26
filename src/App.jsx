@@ -6,6 +6,7 @@ import VideoPlayerModal from './components/VideoPlayerModal';
 import MyListDrawer from './components/MyListDrawer';
 import WatchHistoryDrawer from './components/WatchHistoryDrawer';
 import GoogleAuthModal from './components/GoogleAuthModal';
+import BottomNav from './components/BottomNav';
 import { CONTENTS, SHELVES, AGE_TABS } from './data/contents';
 import { Play, Sparkles, Heart, RotateCcw, ShieldCheck, Clock } from 'lucide-react';
 
@@ -484,7 +485,7 @@ export default function App() {
         onLogout={handleLogout}
       />
 
-      <main className="flex-1 pb-16">
+      <main className="flex-1 pb-24 sm:pb-20 md:pb-16">
         
         {/* If searching, show direct search results grid with YouTube Progress Bar */}
         {searchResults !== null ? (
@@ -619,7 +620,7 @@ export default function App() {
       </main>
 
       {/* Sleek Minimal Streaming Footer */}
-      <footer className="border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 space-y-2">
+      <footer className="border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 space-y-2 mb-16 md:mb-0">
         <div className="flex items-center justify-center gap-2 text-slate-400 font-bold">
           <span>🦛 HippiTV</span>
           <span>•</span>
@@ -632,6 +633,19 @@ export default function App() {
           Curated for healthy speech development with slow transitions, clear articulation, and zero rapid scene cuts.
         </p>
       </footer>
+
+      {/* Mobile Bottom Navigation Bar (iOS / Android thumb friendly) */}
+      <BottomNav
+        selectedAge={selectedAge}
+        onSelectAge={(age) => {
+          setSelectedAge(age);
+          setSearchTerm('');
+        }}
+        onOpenHistory={() => setIsHistoryOpen(true)}
+        onOpenMyList={() => setIsMyListOpen(true)}
+        historyCount={Object.keys(watchHistory).length}
+        favoritesCount={favorites.length}
+      />
 
       {/* Video Player Modal with YouTube-Style Resume & Live Watch Progress */}
       {activeVideo && (

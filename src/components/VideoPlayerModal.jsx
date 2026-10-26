@@ -40,6 +40,15 @@ export default function VideoPlayerModal({
     return `${m}:${s < 10 ? '0' : ''}${s}`;
   };
 
+  // Lock body scroll while modal is open on mobile and desktop
+  useEffect(() => {
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
+  }, []);
+
   // Timer simulation to track watch progress while video player is open
   useEffect(() => {
     const interval = setInterval(() => {
@@ -83,16 +92,16 @@ export default function VideoPlayerModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto bg-slate-950/85 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex flex-col sm:items-center sm:justify-center p-0 sm:p-4 md:p-6 bg-slate-950 sm:bg-slate-950/85 sm:backdrop-blur-md animate-fadeIn">
       
-      {/* Click outside to close */}
-      <div className="fixed inset-0" onClick={onClose} />
+      {/* Click outside to close (desktop only) */}
+      <div className="hidden sm:block fixed inset-0" onClick={onClose} />
 
-      {/* Modal Container */}
-      <div className="relative w-full max-w-4xl bg-slate-900 border border-white/10 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col my-auto text-white">
+      {/* Modal Container: Fullscreen on mobile, rounded card on tablet/desktop */}
+      <div className="relative w-full h-full sm:h-auto sm:max-h-[92vh] sm:max-w-4xl bg-slate-900 border-0 sm:border sm:border-white/10 rounded-none sm:rounded-3xl shadow-2xl flex flex-col text-white z-10 overflow-hidden">
         
-        {/* Top Video Player (16:9 Aspect Ratio) */}
-        <div className="relative aspect-video w-full bg-black shrink-0">
+        {/* Top Video Player (16:9 Aspect Ratio) - Sticky on mobile */}
+        <div className="relative aspect-video w-full bg-black shrink-0 sticky top-0 z-30 shadow-md">
           {item.youtubeId ? (
             <iframe
               key={`${item.youtubeId}-${startSeconds}`}
@@ -125,10 +134,10 @@ export default function VideoPlayerModal({
             </div>
           )}
 
-          {/* Close Button on Top Right */}
+          {/* Close Button on Top Right (44px min touch target) */}
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 p-2 rounded-full bg-black/60 hover:bg-black text-white transition-colors cursor-pointer z-20 backdrop-blur-xs"
+            className="absolute top-2.5 right-2.5 p-2.5 rounded-full bg-black/70 hover:bg-black text-white transition-colors cursor-pointer z-30 backdrop-blur-md active:scale-95 shadow-lg"
             title="Close"
           >
             <X className="w-5 h-5" />
@@ -145,24 +154,24 @@ export default function VideoPlayerModal({
 
         {/* Previous Progress Resume Banner */}
         {hasPromptResume && (
-          <div className="bg-gradient-to-r from-red-950/80 to-amber-950/80 border-b border-red-500/30 px-4 py-2.5 flex items-center justify-between gap-3 text-xs">
+          <div className="bg-gradient-to-r from-red-950/90 to-amber-950/90 border-b border-red-500/30 px-3.5 py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs shrink-0">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-red-400 shrink-0" />
               <span className="text-slate-200">
-                You previously watched up to <strong className="text-white">{formatTime(existingHistory.watchedSeconds)}</strong> ({existingHistory.percent}%).
+                Watched up to <strong className="text-white">{formatTime(existingHistory.watchedSeconds)}</strong> ({existingHistory.percent}%).
               </span>
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <button
                 onClick={handleResumeAtPrevious}
-                className="px-3 py-1 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1 cursor-pointer"
+                className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1 cursor-pointer active:scale-95"
               >
                 <Play className="w-3 h-3 fill-white" />
                 <span>Resume from {formatTime(existingHistory.watchedSeconds)}</span>
               </button>
               <button
                 onClick={handleStartOver}
-                className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-slate-300 text-xs font-medium transition-colors cursor-pointer"
+                className="px-2.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-slate-300 text-xs font-medium transition-colors cursor-pointer active:scale-95"
               >
                 Start Over
               </button>

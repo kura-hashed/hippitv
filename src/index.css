@@ -25,3 +25,16 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
+
+/* Safe area support for iOS home indicator and notch */
+.safe-area-pb {
+  padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
+}
+.safe-area-pt {
+  padding-top: max(env(safe-area-inset-top), 0.5rem);
+}
+
+/* Touch action optimization */
+.touch-pan-x {
+  touch-action: pan-x;
+}

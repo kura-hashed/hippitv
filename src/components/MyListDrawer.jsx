@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, Play, Trash2, Heart } from 'lucide-react';
 
 export default function MyListDrawer({
@@ -10,6 +10,16 @@ export default function MyListDrawer({
   onRemoveFavorite,
   onClearFavorites
 }) {
+  // Lock body scroll when drawer is open
+  useEffect(() => {
+    if (!isOpen) return;
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const favoriteItems = allContents.filter(item => favorites.includes(item.id));
@@ -18,12 +28,12 @@ export default function MyListDrawer({
     <div className="fixed inset-0 z-50 overflow-hidden animate-fadeIn">
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-black/70 backdrop-blur-xs transition-opacity"
+        className="fixed inset-0 bg-black/75 backdrop-blur-xs transition-opacity"
         onClick={onClose}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-8">
-        <div className="w-screen max-w-md bg-slate-900 border-l border-white/10 shadow-2xl flex flex-col">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-8">
+        <div className="w-screen max-w-md bg-slate-900 border-l border-white/10 shadow-2xl flex flex-col text-white">
           
           {/* Header */}
           <div className="p-5 border-b border-white/10 flex items-center justify-between">
