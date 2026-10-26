@@ -27,11 +27,11 @@ export default function Navbar({
             }}
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-orange-500 to-rose-500 flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">
-              <span className="text-xl select-none">🐣</span>
+              <span className="text-xl select-none">🦛</span>
             </div>
             <div className="flex items-baseline gap-1.5">
               <span className="text-xl sm:text-2xl font-black tracking-tight text-white">
-                YKid<span className="text-amber-400">TV</span>
+                Hippi<span className="text-amber-400">TV</span>
               </span>
               <span className="hidden sm:inline-block text-[10px] uppercase tracking-widest font-extrabold px-1.5 py-0.5 rounded bg-white/10 text-amber-300">
                 Kids Stream

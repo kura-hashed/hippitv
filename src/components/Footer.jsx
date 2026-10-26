@@ -11,9 +11,9 @@ export default function Footer({ onSelectAge, onOpenHealthyGuide, onOpenMileston
           {/* Brand Col */}
           <div className="space-y-3 md:col-span-1">
             <div className="flex items-center gap-2">
-              <span className="text-2xl">🐣</span>
+              <span className="text-2xl">🦛</span>
               <span className="text-xl font-black text-slate-800">
-                YKid <span className="text-amber-500 font-extrabold">English</span>
+                Hippi<span className="text-amber-500 font-extrabold">TV</span>
               </span>
             </div>
             <p className="text-xs text-slate-500 leading-relaxed font-medium">
@@ -91,7 +91,7 @@ export default function Footer({ onSelectAge, onOpenHealthyGuide, onOpenMileston
 
         {/* Bottom copyright & disclaimer */}
         <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} YKid English. Built for mindful parents raising curious kids.</p>
+          <p>© {new Date().getFullYear()} HippiTV. Built for mindful parents raising curious kids.</p>
           <p className="flex items-center gap-1">
             Made with <Heart className="w-3 h-3 text-rose-500 fill-rose-500" /> for little explorers.
           </p>

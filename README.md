@@ -1,7 +1,7 @@
-# YKid English 🐣
-### Healthy, Low-Stimulation English Learning Content for Babies & Toddlers
+# HippiTV 🦛
+### Healthy, Low-Stimulation English Learning Video Platform for Babies & Toddlers
 
-**YKid English** is a web application designed for parents raising young children learning English as a native or second language. It focuses specifically on **healthy, low-stimulation, developmentally-sound content** with age-specific filters (0-1 yr, 2 years, 3 years, 4 years, 5+ years).
+**HippiTV** is a Netflix / Apple TV style streaming platform designed for parents raising young children learning English. It features **480+ curated, low-stimulation, developmentally-sound videos and animated stories** with age-specific filters (0-1 yr, 2 years, 3 years, 4 years, 5+ years).
 
 ---
 

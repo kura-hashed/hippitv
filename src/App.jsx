@@ -14,16 +14,16 @@ export default function App() {
   // Favorites saved in localStorage
   const [favorites, setFavorites] = useState(() => {
     try {
-      const saved = localStorage.getItem('ykid_favorites');
-      return saved ? JSON.parse(saved) : ['ms-rachel-first-words', 'bluey-conversations', 'super-simple-songs-baby'];
+      const saved = localStorage.getItem('hippitv_favorites') || localStorage.getItem('ykid_favorites');
+      return saved ? JSON.parse(saved) : ['ms-rachel-first-words', 'bluey-conversations', 'sarah-and-duck-cake'];
     } catch {
-      return ['ms-rachel-first-words', 'bluey-conversations', 'super-simple-songs-baby'];
+      return ['ms-rachel-first-words', 'bluey-conversations', 'sarah-and-duck-cake'];
     }
   });
 
   useEffect(() => {
     try {
-      localStorage.setItem('ykid_favorites', JSON.stringify(favorites));
+      localStorage.setItem('hippitv_favorites', JSON.stringify(favorites));
     } catch (e) {
       console.error(e);
     }
@@ -370,7 +370,7 @@ export default function App() {
       {/* Sleek Minimal Streaming Footer */}
       <footer className="border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 space-y-2">
         <div className="flex items-center justify-center gap-2 text-slate-400 font-bold">
-          <span>🐣 YKidTV</span>
+          <span>🦛 HippiTV</span>
           <span>•</span>
           <span className="text-emerald-400 flex items-center gap-1">
             <ShieldCheck className="w-3.5 h-3.5" />
