@@ -39,6 +39,9 @@ export default function App() {
     setUser(null);
     try {
       localStorage.removeItem('hippitv_user');
+      if (window.google?.accounts?.id) {
+        window.google.accounts.id.disableAutoSelect();
+      }
     } catch (e) {
       console.error(e);
     }

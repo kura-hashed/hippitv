@@ -141,8 +141,12 @@ export default function Navbar({
                 >
                   <div className="relative">
                     <img
-                      src={user.avatar}
+                      src={user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name || 'User')}&background=f59e0b&color=0b0f19&bold=true`}
                       alt={user.name}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name || 'User')}&background=f59e0b&color=0b0f19&bold=true`;
+                      }}
                       className="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover border border-amber-400/80"
                     />
                     <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border border-slate-950" />
@@ -153,7 +157,11 @@ export default function Navbar({
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-slate-900 border border-white/15 shadow-2xl overflow-hidden py-1 z-50 text-white animate-fadeIn">
-                    <div className="p-3 border-b border-white/10 bg-white/5">
+                    <div className="p-3 border-b border-white/10 bg-white/5 space-y-1">
+                      <div className="flex items-center gap-1 text-[10px] text-emerald-400 font-bold">
+                        <Check className="w-3 h-3" />
+                        <span>Google Account</span>
+                      </div>
                       <p className="text-xs font-bold text-white truncate">{user.name}</p>
                       <p className="text-[11px] text-slate-400 truncate">{user.email}</p>
                     </div>
