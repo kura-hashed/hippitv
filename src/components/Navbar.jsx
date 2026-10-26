@@ -44,11 +44,11 @@ export default function Navbar({
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform border border-amber-400/40 bg-gradient-to-tr from-amber-500 to-rose-500 shrink-0">
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform border border-amber-400/40 bg-slate-900 shrink-0">
               <img
-                src="/hippitv-logo.png"
+                src="/hippitv-logo.png?v=2"
                 alt="HippiTV"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover scale-105"
               />
             </div>
             <div className="flex items-baseline gap-1.5">
