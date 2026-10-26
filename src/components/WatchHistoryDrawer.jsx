@@ -42,6 +42,18 @@ export default function WatchHistoryDrawer({
     .filter(item => !!item.content)
     .sort((a, b) => (b.lastWatchedAt || 0) - (a.lastWatchedAt || 0));
 
+  // Auto-sync: automatically purge any stale watch history IDs not found in allContents
+  useEffect(() => {
+    if (Object.keys(watchHistory).length !== historyList.length) {
+      const validSet = new Set(historyList.map(item => item.id));
+      Object.keys(watchHistory).forEach(id => {
+        if (!validSet.has(id)) {
+          onRemoveHistoryItem(id);
+        }
+      });
+    }
+  }, [watchHistory, historyList, onRemoveHistoryItem]);
+
   return (
     <div className="fixed inset-0 z-50 overflow-hidden animate-fadeIn">
       {/* Backdrop */}

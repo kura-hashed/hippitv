@@ -20,9 +20,21 @@ export default function MyListDrawer({
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
-
   const favoriteItems = allContents.filter(item => favorites.includes(item.id));
+
+  // Auto-sync: automatically purge any stale favorite IDs not found in allContents
+  useEffect(() => {
+    if (favorites.length !== favoriteItems.length) {
+      const validSet = new Set(favoriteItems.map(item => item.id));
+      favorites.forEach(id => {
+        if (!validSet.has(id)) {
+          onRemoveFavorite(id);
+        }
+      });
+    }
+  }, [favorites, favoriteItems, onRemoveFavorite]);
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden animate-fadeIn">

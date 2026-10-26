@@ -10,6 +10,9 @@ import { loadGoogleScript, triggerGoogleOAuthPopup } from './utils/googleAuth';
 import { CONTENTS, SHELVES, AGE_TABS } from './data/contents';
 import { Play, Sparkles, Heart, RotateCcw, ShieldCheck, Clock } from 'lucide-react';
 
+// Set of valid content IDs for automatic integrity validation
+const VALID_CONTENT_IDS = new Set(CONTENTS.map(c => c.id));
+
 export default function App() {
   const [selectedAge, setSelectedAge] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -76,17 +79,28 @@ export default function App() {
     });
   };
 
-  // Watch History & Progress State (YouTube Style)
+  // Watch History & Progress State (YouTube Style) - Sanitized against current database
   const [watchHistory, setWatchHistory] = useState(() => {
     try {
       const saved = localStorage.getItem('hippitv_history');
-      return saved ? JSON.parse(saved) : {
-        // Pre-fill a sample progress for instant demonstration
-        'ms-rachel-first-words-baby': {
-          id: 'ms-rachel-first-words-baby',
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && typeof parsed === 'object') {
+          const cleaned = {};
+          Object.entries(parsed).forEach(([id, rec]) => {
+            if (VALID_CONTENT_IDS.has(id)) {
+              cleaned[id] = rec;
+            }
+          });
+          return cleaned;
+        }
+      }
+      return {
+        'ms-rachel-talking-toddler': {
+          id: 'ms-rachel-talking-toddler',
           watchedSeconds: 460,
-          totalSeconds: 1500,
-          percent: 31,
+          totalSeconds: 1800,
+          percent: 26,
           lastWatchedAt: Date.now() - 3600000,
           completed: false
         },
@@ -138,13 +152,20 @@ export default function App() {
     setWatchHistory({});
   };
 
-  // Favorites saved in localStorage
+  // Favorites saved in localStorage - Sanitized against current database
   const [favorites, setFavorites] = useState(() => {
     try {
       const saved = localStorage.getItem('hippitv_favorites') || localStorage.getItem('ykid_favorites');
-      return saved ? JSON.parse(saved) : ['ms-rachel-first-words-baby', 'bluey-keepy-uppy', 'sarah-and-duck-cake'];
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          const valid = parsed.filter(id => VALID_CONTENT_IDS.has(id));
+          return valid;
+        }
+      }
+      return ['ms-rachel-talking-toddler', 'bluey-keepy-uppy', 'sarah-and-duck-cake'];
     } catch {
-      return ['ms-rachel-first-words-baby', 'bluey-keepy-uppy', 'sarah-and-duck-cake'];
+      return ['ms-rachel-talking-toddler', 'bluey-keepy-uppy', 'sarah-and-duck-cake'];
     }
   });
 
@@ -155,6 +176,21 @@ export default function App() {
       console.error(e);
     }
   }, [favorites]);
+
+  // Self-healing: automatically purge any stale favorite IDs on mount
+  useEffect(() => {
+    setFavorites(prev => {
+      const valid = prev.filter(id => VALID_CONTENT_IDS.has(id));
+      if (valid.length !== prev.length) {
+        try {
+          localStorage.setItem('hippitv_favorites', JSON.stringify(valid));
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      return valid;
+    });
+  }, []);
 
   const toggleFavorite = (id) => {
     setFavorites(prev =>
@@ -508,8 +544,8 @@ export default function App() {
         onSelectAge={setSelectedAge}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-        favoritesCount={favorites.length}
-        historyCount={Object.keys(watchHistory).length}
+        favoritesCount={favorites.filter(id => VALID_CONTENT_IDS.has(id)).length}
+        historyCount={Object.keys(watchHistory).filter(id => VALID_CONTENT_IDS.has(id)).length}
         onOpenMyList={() => setIsMyListOpen(true)}
         onOpenHistory={() => setIsHistoryOpen(true)}
         user={user}
@@ -677,8 +713,8 @@ export default function App() {
         }}
         onOpenHistory={() => setIsHistoryOpen(true)}
         onOpenMyList={() => setIsMyListOpen(true)}
-        historyCount={Object.keys(watchHistory).length}
-        favoritesCount={favorites.length}
+        historyCount={Object.keys(watchHistory).filter(id => VALID_CONTENT_IDS.has(id)).length}
+        favoritesCount={favorites.filter(id => VALID_CONTENT_IDS.has(id)).length}
       />
 
       {/* Video Player Modal with YouTube-Style Resume & Live Watch Progress */}
