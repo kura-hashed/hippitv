@@ -4,20 +4,114 @@ import BillboardHero from './components/BillboardHero';
 import ContentRow from './components/ContentRow';
 import VideoPlayerModal from './components/VideoPlayerModal';
 import MyListDrawer from './components/MyListDrawer';
+import WatchHistoryDrawer from './components/WatchHistoryDrawer';
+import GoogleAuthModal from './components/GoogleAuthModal';
 import { CONTENTS, SHELVES, AGE_TABS } from './data/contents';
-import { Play, Sparkles, Heart, RotateCcw, ShieldCheck } from 'lucide-react';
+import { Play, Sparkles, Heart, RotateCcw, ShieldCheck, Clock } from 'lucide-react';
 
 export default function App() {
   const [selectedAge, setSelectedAge] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
+  // User Authentication State (Google Sign In)
+  const [user, setUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem('hippitv_user');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
+
+  const [isGoogleModalOpen, setIsGoogleModalOpen] = useState(false);
+
+  const handleLoginSuccess = (userData) => {
+    setUser(userData);
+    try {
+      localStorage.setItem('hippitv_user', JSON.stringify(userData));
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    try {
+      localStorage.removeItem('hippitv_user');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  // Watch History & Progress State (YouTube Style)
+  const [watchHistory, setWatchHistory] = useState(() => {
+    try {
+      const saved = localStorage.getItem('hippitv_history');
+      return saved ? JSON.parse(saved) : {
+        // Pre-fill a sample progress for instant demonstration
+        'ms-rachel-first-words-baby': {
+          id: 'ms-rachel-first-words-baby',
+          watchedSeconds: 460,
+          totalSeconds: 1500,
+          percent: 31,
+          lastWatchedAt: Date.now() - 3600000,
+          completed: false
+        },
+        'sarah-and-duck-cake': {
+          id: 'sarah-and-duck-cake',
+          watchedSeconds: 280,
+          totalSeconds: 420,
+          percent: 67,
+          lastWatchedAt: Date.now() - 7200000,
+          completed: false
+        }
+      };
+    } catch {
+      return {};
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('hippitv_history', JSON.stringify(watchHistory));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [watchHistory]);
+
+  const updateWatchProgress = (id, watchedSeconds, totalSeconds, percent) => {
+    setWatchHistory(prev => ({
+      ...prev,
+      [id]: {
+        id,
+        watchedSeconds,
+        totalSeconds,
+        percent,
+        lastWatchedAt: Date.now(),
+        completed: percent >= 90
+      }
+    }));
+  };
+
+  const removeHistoryItem = (id) => {
+    setWatchHistory(prev => {
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
+  };
+
+  const clearHistory = () => {
+    setWatchHistory({});
+  };
+
   // Favorites saved in localStorage
   const [favorites, setFavorites] = useState(() => {
     try {
       const saved = localStorage.getItem('hippitv_favorites') || localStorage.getItem('ykid_favorites');
-      return saved ? JSON.parse(saved) : ['ms-rachel-first-words', 'bluey-conversations', 'sarah-and-duck-cake'];
+      return saved ? JSON.parse(saved) : ['ms-rachel-first-words-baby', 'bluey-keepy-uppy', 'sarah-and-duck-cake'];
     } catch {
-      return ['ms-rachel-first-words', 'bluey-conversations', 'sarah-and-duck-cake'];
+      return ['ms-rachel-first-words-baby', 'bluey-keepy-uppy', 'sarah-and-duck-cake'];
     }
   });
 
@@ -45,9 +139,16 @@ export default function App() {
 
   const isFavorite = (id) => favorites.includes(id);
 
-  // Video Player Modal state
+  // Modals & Drawers
   const [activeVideo, setActiveVideo] = useState(null);
+  const [initialStartSeconds, setInitialStartSeconds] = useState(0);
   const [isMyListOpen, setIsMyListOpen] = useState(false);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+
+  const handlePlayVideo = (item, startSec = 0) => {
+    setInitialStartSeconds(startSec);
+    setActiveVideo(item);
+  };
 
   // Billboard Featured Items depending on selected age
   const featuredItems = useMemo(() => {
@@ -75,18 +176,15 @@ export default function App() {
     });
   }, [searchTerm]);
 
-  // Dynamic Shelves based on selected age with ZERO DUPLICATES across rows!
+  // Dynamic Shelves based on selected age with smart deduplication
   const activeShelves = useMemo(() => {
     const usedIds = new Set();
 
     const pickUnique = (candidates, count = 24) => {
-      // First pick items that haven't been shown in any earlier row on the screen
       const fresh = candidates.filter(item => !usedIds.has(item.id));
       const chosen = fresh.slice(0, count);
-      // Mark as used
       chosen.forEach(item => usedIds.add(item.id));
 
-      // Fallback if needed to fill row
       if (chosen.length < count && candidates.length > chosen.length) {
         const remaining = candidates.filter(item => !chosen.some(c => c.id === item.id));
         const extra = remaining.slice(0, count - chosen.length);
@@ -96,6 +194,16 @@ export default function App() {
       return chosen;
     };
 
+    // Build "Continue Watching" items from watchHistory
+    const continueWatchingItems = Object.entries(watchHistory)
+      .map(([id, record]) => {
+        const content = CONTENTS.find(c => c.id === id);
+        return { ...record, content };
+      })
+      .filter(item => !!item.content && item.percent > 0 && item.percent < 90)
+      .sort((a, b) => (b.lastWatchedAt || 0) - (a.lastWatchedAt || 0))
+      .map(item => item.content);
+
     if (selectedAge === 'real') {
       const realItems = CONTENTS.filter(item => item.isRealPerson === true || (item.tags && item.tags.includes('Real Person')));
       const speechItems = realItems.filter(item => (item.tags && (item.tags.includes('Speech Therapy') || item.tags.includes('Speech Delay') || item.tags.includes('Top SLP Pick') || item.tags.includes('First Words'))));
@@ -103,7 +211,20 @@ export default function App() {
       const musicItems = realItems.filter(item => item.category === 'song' || (item.tags && item.tags.includes('Sing Along')));
       const feelingsSocial = realItems.filter(item => item.tags && (item.tags.includes('Emotions') || item.tags.includes('Mindfulness') || item.tags.includes('Mister Rogers') || item.tags.includes('Circle Time')));
 
-      return [
+      const result = [];
+
+      // Continue watching shelf if exists
+      if (continueWatchingItems.length > 0) {
+        result.push({
+          id: 'continue-watching-real',
+          title: '🕒 Continue Watching',
+          subtitle: 'Resume right where your baby left off',
+          badge: 'RESUME',
+          items: continueWatchingItems.slice(0, 15)
+        });
+      }
+
+      result.push(
         {
           id: 'real-speech-educators',
           title: '🇺🇸 Real People: Certified Speech Educators (Ms. Rachel & Caitie)',
@@ -139,10 +260,25 @@ export default function App() {
           badge: 'ALL REAL HOSTS',
           items: pickUnique(realItems, 24)
         }
-      ].filter(s => s.items.length > 0);
+      );
+
+      return result.filter(s => s.items.length > 0);
     }
 
     if (selectedAge === 'all') {
+      const result = [];
+
+      // Continue Watching shelf if user has history
+      if (continueWatchingItems.length > 0) {
+        result.push({
+          id: 'continue-watching-all',
+          title: '🕒 Continue Watching for Baby',
+          subtitle: 'Resume right where your baby left off',
+          badge: 'RESUME',
+          items: continueWatchingItems.slice(0, 15)
+        });
+      }
+
       const allShelvesConfig = [
         {
           id: 'shelf-real-american',
@@ -216,20 +352,35 @@ export default function App() {
         }
       ];
 
-      return allShelvesConfig.map(shelf => {
-        const candidates = CONTENTS.filter(shelf.filterFn);
-        return {
-          ...shelf,
-          items: pickUnique(candidates, 24)
-        };
-      }).filter(s => s.items.length > 0);
+      result.push(
+        ...allShelvesConfig.map(shelf => {
+          const candidates = CONTENTS.filter(shelf.filterFn);
+          return {
+            ...shelf,
+            items: pickUnique(candidates, 24)
+          };
+        })
+      );
+
+      return result.filter(s => s.items.length > 0);
     }
 
-    // When an age is selected (e.g. 2 Years), build completely unique age-dedicated rows!
+    // When an age is selected (e.g. 2 Years)
     const ageItems = CONTENTS.filter(item => item.targetAges.includes(selectedAge));
     const result = [];
 
-    // For 2 Years: Dedicated Real People row and Ultra-Gentle Zero Scares row first!
+    // Continue Watching for this age
+    const ageContinueWatching = continueWatchingItems.filter(item => item.targetAges.includes(selectedAge));
+    if (ageContinueWatching.length > 0) {
+      result.push({
+        id: `continue-watching-age-${selectedAge}`,
+        title: '🕒 Continue Watching',
+        subtitle: 'Resume right where your child left off',
+        badge: 'RESUME',
+        items: ageContinueWatching.slice(0, 15)
+      });
+    }
+
     if (selectedAge === '2') {
       const real2yo = ageItems.filter(item => item.isRealPerson === true || (item.tags && item.tags.includes('Real Person')));
       const chosenReal = pickUnique(real2yo, 20);
@@ -256,7 +407,6 @@ export default function App() {
       }
     }
 
-    // Top picks for this age (excluding items already picked)
     const topChosen = pickUnique(ageItems, 20);
     if (topChosen.length > 0) {
       result.push({
@@ -268,7 +418,6 @@ export default function App() {
       });
     }
 
-    // Calm / Low-Stimulation row for this age
     const calmItems = ageItems.filter(item => item.stimulation === 'Calm');
     const calmChosen = pickUnique(calmItems, 20);
     if (calmChosen.length > 0) {
@@ -281,7 +430,6 @@ export default function App() {
       });
     }
 
-    // Songs & Rhymes for this age
     const songItems = ageItems.filter(item => item.category === 'song');
     const songChosen = pickUnique(songItems, 20);
     if (songChosen.length > 0) {
@@ -294,7 +442,6 @@ export default function App() {
       });
     }
 
-    // Stories & Read-Alouds for this age
     const storyItems = ageItems.filter(item => item.category === 'book' || item.category === 'video');
     const storyChosen = pickUnique(storyItems, 20);
     if (storyChosen.length > 0) {
@@ -308,7 +455,7 @@ export default function App() {
     }
 
     return result;
-  }, [selectedAge]);
+  }, [selectedAge, watchHistory]);
 
   // Related items for the currently playing video
   const relatedItems = useMemo(() => {
@@ -322,19 +469,24 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#0b0f19] text-slate-100 flex flex-col font-sans selection:bg-amber-400 selection:text-slate-950">
       
-      {/* Top Navbar */}
+      {/* Top Navbar with Google Sign-In & Watch History */}
       <Navbar
         selectedAge={selectedAge}
         onSelectAge={setSelectedAge}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         favoritesCount={favorites.length}
+        historyCount={Object.keys(watchHistory).length}
         onOpenMyList={() => setIsMyListOpen(true)}
+        onOpenHistory={() => setIsHistoryOpen(true)}
+        user={user}
+        onOpenGoogleLogin={() => setIsGoogleModalOpen(true)}
+        onLogout={handleLogout}
       />
 
       <main className="flex-1 pb-16">
         
-        {/* If searching, show direct search results grid */}
+        {/* If searching, show direct search results grid with YouTube Progress Bar */}
         {searchResults !== null ? (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
@@ -348,7 +500,7 @@ export default function App() {
               </div>
               <button
                 onClick={() => setSearchTerm('')}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition-colors cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Clear Search</span>
@@ -357,40 +509,70 @@ export default function App() {
 
             {searchResults.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {searchResults.map((item) => (
-                  <div
-                    key={item.id}
-                    onClick={() => setActiveVideo(item)}
-                    className="group cursor-pointer space-y-2"
-                  >
-                    <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-900 border border-white/10 group-hover:border-amber-400/60 transition-colors shadow-md">
-                      <img
-                        src={item.thumbnail}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
-                          <Play className="w-4 h-4 fill-slate-950 text-slate-950 ml-0.5" />
+                {searchResults.map((item) => {
+                  const historyRecord = watchHistory[item.id];
+                  return (
+                    <div
+                      key={item.id}
+                      onClick={() => handlePlayVideo(item, historyRecord?.watchedSeconds || 0)}
+                      className="group cursor-pointer space-y-2"
+                    >
+                      <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-900 border border-white/10 group-hover:border-amber-400/60 transition-colors shadow-md">
+                        <img
+                          src={item.thumbnail}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
+                            <Play className="w-4 h-4 fill-slate-950 text-slate-950 ml-0.5" />
+                          </div>
                         </div>
+
+                        {/* Top Badges */}
+                        <div className="absolute top-2 left-2 flex items-center gap-1">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-black bg-amber-400 text-slate-950">
+                            {item.ageDisplay}
+                          </span>
+                          {(item.isRealPerson || (item.tags && item.tags.includes('Real Person'))) && (
+                            <span className="px-2 py-0.5 rounded text-[10px] font-black bg-sky-500 text-white">
+                              🇺🇸 Real
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Duration & Watch Progress */}
+                        {historyRecord && historyRecord.percent > 0 && (
+                          <span className="absolute bottom-2 left-2 px-1.5 py-0.5 rounded text-[9px] font-black bg-red-600 text-white shadow-sm">
+                            {historyRecord.percent >= 90 ? 'Watched' : `${historyRecord.percent}%`}
+                          </span>
+                        )}
+
+                        <span className="absolute bottom-2 right-2 px-1.5 py-0.5 rounded text-[10px] font-bold bg-black/70 text-slate-300">
+                          {item.duration}
+                        </span>
+
+                        {/* YouTube Red Progress Bar */}
+                        {historyRecord && historyRecord.percent > 0 && (
+                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/80 overflow-hidden">
+                            <div
+                              className="h-full bg-red-600 transition-all duration-300"
+                              style={{ width: `${Math.min(100, Math.max(5, historyRecord.percent))}%` }}
+                            />
+                          </div>
+                        )}
                       </div>
-                      <span className="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-black bg-amber-400 text-slate-950">
-                        {item.ageDisplay}
-                      </span>
-                      <span className="absolute bottom-2 right-2 px-1.5 py-0.5 rounded text-[10px] font-bold bg-black/70 text-slate-300">
-                        {item.duration}
-                      </span>
+                      <div>
+                        <h4 className="text-xs font-bold text-white group-hover:text-amber-300 line-clamp-1">
+                          {item.title}
+                        </h4>
+                        <p className="text-[11px] text-slate-400 truncate">
+                          {item.creator} • {item.stimulation}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white group-hover:text-amber-300 line-clamp-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-[11px] text-slate-400 truncate">
-                        {item.creator} • {item.stimulation}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <div className="py-20 text-center space-y-3">
@@ -408,13 +590,13 @@ export default function App() {
             {/* Billboard Featured Spotlight Hero */}
             <BillboardHero
               featuredItems={featuredItems}
-              onPlay={(item) => setActiveVideo(item)}
-              onMoreInfo={(item) => setActiveVideo(item)}
+              onPlay={(item) => handlePlayVideo(item, watchHistory[item.id]?.watchedSeconds || 0)}
+              onMoreInfo={(item) => handlePlayVideo(item, watchHistory[item.id]?.watchedSeconds || 0)}
               isFavorite={isFavorite}
               onToggleFavorite={toggleFavorite}
             />
 
-            {/* Rails / Shelves */}
+            {/* Rails / Shelves with YouTube-Style Red Progress Bars */}
             <div className="space-y-8 sm:space-y-10 -mt-8 relative z-20">
               {activeShelves.map((shelf) => (
                 <ContentRow
@@ -423,10 +605,11 @@ export default function App() {
                   subtitle={shelf.subtitle}
                   badge={shelf.badge}
                   items={shelf.items}
-                  onPlay={(item) => setActiveVideo(item)}
-                  onMoreInfo={(item) => setActiveVideo(item)}
+                  onPlay={(item) => handlePlayVideo(item, watchHistory[item.id]?.watchedSeconds || 0)}
+                  onMoreInfo={(item) => handlePlayVideo(item, watchHistory[item.id]?.watchedSeconds || 0)}
                   isFavorite={isFavorite}
                   onToggleFavorite={toggleFavorite}
+                  watchHistory={watchHistory}
                 />
               ))}
             </div>
@@ -450,15 +633,18 @@ export default function App() {
         </p>
       </footer>
 
-      {/* Video Player Modal (Plays directly inside the app!) */}
+      {/* Video Player Modal with YouTube-Style Resume & Live Watch Progress */}
       {activeVideo && (
         <VideoPlayerModal
           item={activeVideo}
           onClose={() => setActiveVideo(null)}
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
-          onSelectRelated={(related) => setActiveVideo(related)}
+          onSelectRelated={(related) => handlePlayVideo(related, watchHistory[related.id]?.watchedSeconds || 0)}
           relatedItems={relatedItems}
+          existingHistory={watchHistory[activeVideo.id]}
+          initialStartSeconds={initialStartSeconds}
+          onUpdateProgress={updateWatchProgress}
         />
       )}
 
@@ -468,9 +654,27 @@ export default function App() {
         onClose={() => setIsMyListOpen(false)}
         favorites={favorites}
         allContents={CONTENTS}
-        onPlayItem={(item) => setActiveVideo(item)}
+        onPlayItem={(item) => handlePlayVideo(item, watchHistory[item.id]?.watchedSeconds || 0)}
         onRemoveFavorite={removeFavorite}
         onClearFavorites={clearFavorites}
+      />
+
+      {/* Watch History Drawer (YouTube Style) */}
+      <WatchHistoryDrawer
+        isOpen={isHistoryOpen}
+        onClose={() => setIsHistoryOpen(false)}
+        watchHistory={watchHistory}
+        allContents={CONTENTS}
+        onResumeVideo={(item, startSec) => handlePlayVideo(item, startSec)}
+        onRemoveHistoryItem={removeHistoryItem}
+        onClearHistory={clearHistory}
+      />
+
+      {/* Google Authentication Modal */}
+      <GoogleAuthModal
+        isOpen={isGoogleModalOpen}
+        onClose={() => setIsGoogleModalOpen(false)}
+        onLoginSuccess={handleLoginSuccess}
       />
 
     </div>

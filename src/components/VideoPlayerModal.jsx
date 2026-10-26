@@ -1,5 +1,5 @@
-import React from 'react';
-import { X, Heart, ExternalLink, ShieldCheck, Sparkles, Volume2, Play } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { X, Heart, ExternalLink, ShieldCheck, Sparkles, Volume2, Play, Clock, CheckCircle2, RotateCcw } from 'lucide-react';
 
 export default function VideoPlayerModal({
   item,
@@ -7,26 +7,96 @@ export default function VideoPlayerModal({
   isFavorite,
   onToggleFavorite,
   onSelectRelated,
-  relatedItems
+  relatedItems,
+  existingHistory,
+  initialStartSeconds = 0,
+  onUpdateProgress
 }) {
   if (!item) return null;
 
   const isSaved = isFavorite(item.id);
 
+  // Parse duration string like "15 min" or "5 min" to total seconds
+  const parseTotalSeconds = (dur) => {
+    if (!dur) return 600;
+    const match = dur.match(/\d+/);
+    return match ? parseInt(match[0], 10) * 60 : 600;
+  };
+
+  const totalSeconds = parseTotalSeconds(item.duration);
+
+  // Starting playback position
+  const [startSeconds, setStartSeconds] = useState(initialStartSeconds || (existingHistory?.watchedSeconds && existingHistory.percent < 90 ? existingHistory.watchedSeconds : 0));
+  const [currentWatched, setCurrentWatched] = useState(existingHistory?.watchedSeconds || initialStartSeconds || 0);
+  const [hasPromptResume, setHasPromptResume] = useState(
+    existingHistory && existingHistory.watchedSeconds > 15 && existingHistory.percent < 90 && initialStartSeconds === 0
+  );
+
+  // Format seconds to mm:ss
+  const formatTime = (secs) => {
+    if (!secs || isNaN(secs)) return '0:00';
+    const m = Math.floor(secs / 60);
+    const s = Math.floor(secs % 60);
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
+  };
+
+  // Timer simulation to track watch progress while video player is open
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWatched((prev) => {
+        const next = Math.min(totalSeconds, prev + 2);
+        const percent = Math.min(100, Math.round((next / totalSeconds) * 100));
+        if (onUpdateProgress) {
+          onUpdateProgress(item.id, next, totalSeconds, percent);
+        }
+        return next;
+      });
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [item.id, totalSeconds, onUpdateProgress]);
+
+  const percent = Math.min(100, Math.round((currentWatched / totalSeconds) * 100));
+
+  const handleResumeAtPrevious = () => {
+    if (existingHistory?.watchedSeconds) {
+      setStartSeconds(existingHistory.watchedSeconds);
+      setCurrentWatched(existingHistory.watchedSeconds);
+    }
+    setHasPromptResume(false);
+  };
+
+  const handleStartOver = () => {
+    setStartSeconds(0);
+    setCurrentWatched(0);
+    setHasPromptResume(false);
+    if (onUpdateProgress) {
+      onUpdateProgress(item.id, 0, totalSeconds, 0);
+    }
+  };
+
+  const handleMarkAsWatched = () => {
+    setCurrentWatched(totalSeconds);
+    if (onUpdateProgress) {
+      onUpdateProgress(item.id, totalSeconds, totalSeconds, 100);
+    }
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto bg-slate-950/80 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto bg-slate-950/85 backdrop-blur-md animate-fadeIn">
       
       {/* Click outside to close */}
       <div className="fixed inset-0" onClick={onClose} />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl bg-slate-900 border border-white/10 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col my-auto">
+      <div className="relative w-full max-w-4xl bg-slate-900 border border-white/10 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col my-auto text-white">
         
         {/* Top Video Player (16:9 Aspect Ratio) */}
         <div className="relative aspect-video w-full bg-black shrink-0">
           {item.youtubeId ? (
             <iframe
-              src={`https://www.youtube.com/embed/${item.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+              key={`${item.youtubeId}-${startSeconds}`}
+              src={`https://www.youtube.com/embed/${item.youtubeId}?autoplay=1&rel=0&modestbranding=1${startSeconds > 0 ? `&start=${startSeconds}` : ''}`}
               title={item.title}
               className="w-full h-full border-0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -63,7 +133,42 @@ export default function VideoPlayerModal({
           >
             <X className="w-5 h-5" />
           </button>
+
+          {/* YouTube Red Progress Bar along bottom of video player */}
+          <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-black/80 overflow-hidden z-20">
+            <div
+              className="h-full bg-red-600 transition-all duration-300"
+              style={{ width: `${Math.min(100, Math.max(3, percent))}%` }}
+            />
+          </div>
         </div>
+
+        {/* Previous Progress Resume Banner */}
+        {hasPromptResume && (
+          <div className="bg-gradient-to-r from-red-950/80 to-amber-950/80 border-b border-red-500/30 px-4 py-2.5 flex items-center justify-between gap-3 text-xs">
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4 text-red-400 shrink-0" />
+              <span className="text-slate-200">
+                You previously watched up to <strong className="text-white">{formatTime(existingHistory.watchedSeconds)}</strong> ({existingHistory.percent}%).
+              </span>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                onClick={handleResumeAtPrevious}
+                className="px-3 py-1 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1 cursor-pointer"
+              >
+                <Play className="w-3 h-3 fill-white" />
+                <span>Resume from {formatTime(existingHistory.watchedSeconds)}</span>
+              </button>
+              <button
+                onClick={handleStartOver}
+                className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-slate-300 text-xs font-medium transition-colors cursor-pointer"
+              >
+                Start Over
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Scrollable Information Body */}
         <div className="p-4 sm:p-6 overflow-y-auto space-y-5">
@@ -71,7 +176,7 @@ export default function VideoPlayerModal({
           {/* Header Row: Title & Actions */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-xs font-black">
+              <div className="flex flex-wrap items-center gap-2 text-xs font-black">
                 <span className="px-2 py-0.5 rounded bg-amber-400 text-slate-950 uppercase tracking-wider">
                   {item.ageDisplay}
                 </span>
@@ -116,6 +221,48 @@ export default function VideoPlayerModal({
                 <span>{item.platform}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
+            </div>
+          </div>
+
+          {/* YouTube Watch Progress Tracker Bar */}
+          <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+            <div className="flex items-center justify-between text-xs">
+              <span className="font-bold text-slate-300 flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-red-500" />
+                <span>Watch Progress:</span>
+                <strong className="text-white">{formatTime(currentWatched)}</strong> / {formatTime(totalSeconds)} ({percent}%)
+              </span>
+              <div className="flex items-center gap-2">
+                {percent >= 90 ? (
+                  <span className="text-emerald-400 font-bold flex items-center gap-1 text-[11px]">
+                    <CheckCircle2 className="w-3 h-3" />
+                    Completed
+                  </span>
+                ) : (
+                  <button
+                    onClick={handleMarkAsWatched}
+                    className="text-[11px] font-bold text-slate-400 hover:text-amber-400 transition-colors"
+                  >
+                    Mark as Watched
+                  </button>
+                )}
+                {percent > 0 && (
+                  <button
+                    onClick={handleStartOver}
+                    className="text-[11px] text-slate-400 hover:text-white transition-colors"
+                  >
+                    Reset
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Red Progress Track */}
+            <div className="w-full h-2 rounded-full bg-slate-800 overflow-hidden relative">
+              <div
+                className="h-full bg-red-600 rounded-full transition-all duration-300"
+                style={{ width: `${Math.min(100, Math.max(2, percent))}%` }}
+              />
             </div>
           </div>
 

@@ -9,7 +9,8 @@ export default function ContentRow({
   onPlay,
   onMoreInfo,
   isFavorite,
-  onToggleFavorite
+  onToggleFavorite,
+  watchHistory = {}
 }) {
   const rowRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -80,6 +81,7 @@ export default function ContentRow({
         >
           {items.map((item) => {
             const isSaved = isFavorite(item.id);
+            const historyRecord = watchHistory[item.id];
             return (
               <div
                 key={item.id}
@@ -122,10 +124,26 @@ export default function ContentRow({
                     </div>
                   </div>
 
-                  {/* Duration (Bottom Right) */}
+                  {/* Duration & Watch Progress (Bottom Right / Left) */}
+                  {historyRecord && historyRecord.percent > 0 && (
+                    <span className="absolute bottom-2 left-2 px-1.5 py-0.5 rounded text-[9px] font-black bg-red-600 text-white shadow-sm">
+                      {historyRecord.percent >= 90 ? 'Watched' : `${historyRecord.percent}%`}
+                    </span>
+                  )}
+
                   <span className="absolute bottom-2 right-2 px-1.5 py-0.5 rounded text-[10px] font-bold bg-black/70 text-slate-300">
                     {item.duration}
                   </span>
+
+                  {/* YouTube Red Progress Bar along bottom */}
+                  {historyRecord && historyRecord.percent > 0 && (
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/80 overflow-hidden">
+                      <div
+                        className="h-full bg-red-600 transition-all duration-300"
+                        style={{ width: `${Math.min(100, Math.max(5, historyRecord.percent))}%` }}
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Card Title & Info underneath */}
