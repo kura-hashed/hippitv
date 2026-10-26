@@ -72,70 +72,170 @@ export default function App() {
     });
   }, [searchTerm]);
 
-  // Dynamic Shelves based on selected age
+  // Dynamic Shelves based on selected age with ZERO DUPLICATES across rows!
   const activeShelves = useMemo(() => {
+    const usedIds = new Set();
+
+    const pickUnique = (candidates, count = 24) => {
+      // First pick items that haven't been shown in any earlier row on the screen
+      const fresh = candidates.filter(item => !usedIds.has(item.id));
+      const chosen = fresh.slice(0, count);
+      // Mark as used
+      chosen.forEach(item => usedIds.add(item.id));
+
+      // Fallback if needed to fill row
+      if (chosen.length < count && candidates.length > chosen.length) {
+        const remaining = candidates.filter(item => !chosen.some(c => c.id === item.id));
+        const extra = remaining.slice(0, count - chosen.length);
+        extra.forEach(item => usedIds.add(item.id));
+        chosen.push(...extra);
+      }
+      return chosen;
+    };
+
     if (selectedAge === 'all') {
-      return SHELVES.map(shelf => ({
-        ...shelf,
-        items: CONTENTS.filter(shelf.filterFn)
-      }));
+      const allShelvesConfig = [
+        {
+          id: 'shelf-gentle-2yo',
+          title: '🐰 Ultra-Gentle & Cozy (Zero Scares, 100% Cuddly)',
+          subtitle: 'Soft bunnies, gentle ducks, warm hugs, and zero loud surprises',
+          badge: 'ZERO SCARES',
+          filterFn: (item) => item.targetAges.includes('2') && item.stimulation === 'Calm'
+        },
+        {
+          id: 'shelf-2yo',
+          title: 'Top Picks for 2-Year-Olds',
+          subtitle: 'First words, speech therapy, and gesture imitation',
+          badge: 'AGE 2',
+          filterFn: (item) => item.targetAges.includes('2')
+        },
+        {
+          id: 'shelf-calm',
+          title: '🌿 Low-Stimulation Classics',
+          subtitle: 'Slow scene cuts, acoustic instruments, zero overstimulation',
+          badge: 'LOW STIMULATION',
+          filterFn: (item) => item.stimulation === 'Calm'
+        },
+        {
+          id: 'shelf-3yo',
+          title: 'Best for 3-Year-Olds',
+          subtitle: 'Family dialogue, emotional regulation, and pretend play',
+          badge: 'AGE 3',
+          filterFn: (item) => item.targetAges.includes('3')
+        },
+        {
+          id: 'shelf-songs',
+          title: '🎵 Sing-Along & Action Rhymes',
+          subtitle: 'Catchy rhythms and whole-body coordination',
+          badge: 'SONGS',
+          filterFn: (item) => item.category === 'song'
+        },
+        {
+          id: 'shelf-books',
+          title: '📚 Picture Books & Read-Alouds',
+          subtitle: 'Bedtime stories and language pattern repetition',
+          badge: 'STORIES',
+          filterFn: (item) => item.category === 'book'
+        },
+        {
+          id: 'shelf-phonics',
+          title: '🧩 Phonics & Early Learning (Ages 4-5)',
+          subtitle: 'Letter sounds, numbers, and early reading confidence',
+          badge: 'PHONICS',
+          filterFn: (item) => item.targetAges.includes('4') || item.targetAges.includes('5')
+        },
+        {
+          id: 'shelf-science',
+          title: '🚀 Science, Ocean & STEM Explorers (Age 5+)',
+          subtitle: 'Marine biology, creature reports, and curious questions',
+          badge: 'STEM',
+          filterFn: (item) => item.targetAges.includes('5')
+        },
+        {
+          id: 'shelf-infant',
+          title: '🍼 Baby First Sounds & Lullabies (0-1 Yr)',
+          subtitle: 'Gentle acoustics, soothing bedtime, and babbling imitation',
+          badge: 'INFANT',
+          filterFn: (item) => item.targetAges.includes('0-1')
+        }
+      ];
+
+      return allShelvesConfig.map(shelf => {
+        const candidates = CONTENTS.filter(shelf.filterFn);
+        return {
+          ...shelf,
+          items: pickUnique(candidates, 24)
+        };
+      }).filter(s => s.items.length > 0);
     }
 
-    // When an age is selected (e.g. 2 Years), build age-dedicated rows
+    // When an age is selected (e.g. 2 Years), build completely unique age-dedicated rows!
     const ageItems = CONTENTS.filter(item => item.targetAges.includes(selectedAge));
-    const ultraGentle = ageItems.filter(item => item.stimulation === 'Calm' && (item.tags.includes('Zero Scares') || item.tags.includes('Emotional Security') || item.tags.includes('Cuddly') || item.tags.includes('Low Stimulation')));
-    const calmItems = ageItems.filter(item => item.stimulation === 'Calm');
-    const songItems = ageItems.filter(item => item.category === 'song');
-    const storyItems = ageItems.filter(item => item.category === 'book' || item.category === 'video');
-
     const result = [];
 
-    // For 2 Years: Showcase the ultra-gentle, non-scary cozy row right at the very top!
-    if (selectedAge === '2' && ultraGentle.length > 0) {
+    // For 2 Years: Dedicated Ultra-Gentle Zero Scares row first!
+    if (selectedAge === '2') {
+      const ultraGentle = ageItems.filter(item => item.stimulation === 'Calm' && (item.tags.includes('Zero Scares') || item.tags.includes('Emotional Security') || item.tags.includes('Cuddly') || item.tags.includes('Low Stimulation')));
+      const chosenGentle = pickUnique(ultraGentle, 20);
+      if (chosenGentle.length > 0) {
+        result.push({
+          id: 'age-2-ultra-gentle',
+          title: '🐰 Ultra-Gentle & Cozy (Zero Scares, 100% Cuddly)',
+          subtitle: 'Soft bunnies, gentle ducks, warm hugs, and zero loud surprises',
+          badge: 'ZERO SCARES',
+          items: chosenGentle
+        });
+      }
+    }
+
+    // Top picks for this age (excluding items already picked)
+    const topChosen = pickUnique(ageItems, 20);
+    if (topChosen.length > 0) {
       result.push({
-        id: `age-2-ultra-gentle`,
-        title: '🐰 Ultra-Gentle & Cozy (Zero Scares, 100% Cuddly)',
-        subtitle: 'Soft bunnies, gentle ducks, warm hugs, and zero loud surprises',
-        badge: 'ZERO SCARES',
-        items: ultraGentle
+        id: `age-${selectedAge}-top`,
+        title: `★ Top Picks for ${AGE_TABS.find(t => t.id === selectedAge)?.label || 'This Age'}`,
+        subtitle: 'Curated speech-boosting and favorite titles',
+        badge: 'TOP PICKS',
+        items: topChosen
       });
     }
 
-    result.push({
-      id: `age-${selectedAge}-top`,
-      title: `★ Top Picks for ${AGE_TABS.find(t => t.id === selectedAge)?.label || 'This Age'}`,
-      subtitle: 'Curated gentle and speech-boosting favorites',
-      badge: 'TOP PICKS',
-      items: ageItems
-    });
-
-    if (calmItems.length > 0 && selectedAge !== '2') {
+    // Calm / Low-Stimulation row for this age
+    const calmItems = ageItems.filter(item => item.stimulation === 'Calm');
+    const calmChosen = pickUnique(calmItems, 20);
+    if (calmChosen.length > 0) {
       result.push({
         id: `age-${selectedAge}-calm`,
         title: '🌿 Low-Stimulation & Calm Pacing',
-        subtitle: 'Zero fast cuts, acoustic sound, and speech modeling',
+        subtitle: 'Zero fast cuts, acoustic sound, and gentle speech modeling',
         badge: 'CALM',
-        items: calmItems
+        items: calmChosen
       });
     }
 
-    if (songItems.length > 0) {
+    // Songs & Rhymes for this age
+    const songItems = ageItems.filter(item => item.category === 'song');
+    const songChosen = pickUnique(songItems, 20);
+    if (songChosen.length > 0) {
       result.push({
         id: `age-${selectedAge}-songs`,
         title: '🎵 Rhymes & Action Songs',
         subtitle: 'Melodic repetition for auditory learning',
         badge: 'MUSIC',
-        items: songItems
+        items: songChosen
       });
     }
 
-    if (storyItems.length > 0) {
+    // Stories & Read-Alouds for this age
+    const storyItems = ageItems.filter(item => item.category === 'book' || item.category === 'video');
+    const storyChosen = pickUnique(storyItems, 20);
+    if (storyChosen.length > 0) {
       result.push({
         id: `age-${selectedAge}-stories`,
-        title: '📖 Stories & Gentle Shows',
+        title: '📖 Stories & Picture Books',
         subtitle: 'Character dialogue and rich vocabulary',
         badge: 'STORIES',
-        items: storyItems
+        items: storyChosen
       });
     }
 
