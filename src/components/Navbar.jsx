@@ -44,8 +44,12 @@ export default function Navbar({
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-orange-500 to-rose-500 flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">
-              <span className="text-xl select-none">🦛</span>
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform border border-amber-400/40 bg-gradient-to-tr from-amber-500 to-rose-500 shrink-0">
+              <img
+                src="/hippitv-logo.png"
+                alt="HippiTV"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="flex items-baseline gap-1.5">
               <span className="text-xl sm:text-2xl font-black tracking-tight text-white">
